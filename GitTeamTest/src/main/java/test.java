@@ -9,7 +9,7 @@ public class test {
 		System.out.println("김용남...화이팅");
 		System.out.println("나 집에 갈래요");
 		
-		System.err.println("잘 되겠죠? ");
+		System.out.println("잘 되겠죠? ");
 
 	}
 	
