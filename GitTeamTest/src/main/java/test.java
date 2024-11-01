@@ -8,6 +8,9 @@ public class test {
 		System.out.println("김광조(집에가고싶어요)");
 		System.out.println("김용남...화이팅");
 		System.out.println("나 집에 갈래요");
+		
+		System.out.println("잘 되겠죠? ");
+		System.out.println("Thanks");
 
 	}
 	
