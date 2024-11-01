@@ -7,7 +7,6 @@ public class test {
 		System.out.println("박수연");
 		System.out.println("김광조(집에가고싶어요)");
 		System.out.println("김용남...화이팅");
-		System.out.println("감자");
 	}
 	
 }
