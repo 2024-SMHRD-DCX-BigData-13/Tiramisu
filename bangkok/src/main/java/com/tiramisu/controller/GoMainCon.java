@@ -11,7 +11,7 @@ public class GoMainCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// 메인 페이지 이동 메소드
 		return "main";
 	}
 

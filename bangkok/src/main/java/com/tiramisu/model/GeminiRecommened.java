@@ -1,9 +1,7 @@
 package com.tiramisu.model;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
-
-import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -12,56 +10,39 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+ // 이 클래스 수정 x
 public class GeminiRecommened {
-	public static void main(String[] args) {
+	
+	// 제미니 api url+키
+	private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAz_C0sAiYalGY0xX7-lOHwFaoB9qcqUCA";
 
-		String geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAz_C0sAiYalGY0xX7-lOHwFaoB9qcqUCA"; // Gemini
-																																											// API
-																																											// 키
+	// 제미니로부터 응답을 가져오는 메서드
+	public String getResponse(String userInput) {
+		String jsonInputString = "{\"contents\":[{\"parts\":[{\"text\":\"" + userInput + "\"}]}]}";
 
 		try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
-			Scanner scanner = new Scanner(System.in);
-			String userInput;
+			HttpPost postRequest = new HttpPost(GEMINI_URL);
+			postRequest.setHeader("Content-Type", "application/json");
+			postRequest.setEntity(new StringEntity(jsonInputString, StandardCharsets.UTF_8));
 
-			while (true) {
-				userInput = scanner.nextLine(); // 사용자 입력 받기
-
-				// "exit" 입력 시 종료
-				if (userInput.equalsIgnoreCase("exit")) {
-					System.out.println("대화를 종료합니다.");
-					break;
-				}
-
-				// JSON 입력 문자열 (한국어 입력 그대로 사용)
-				String jsonInputString = "{\"contents\":[{\"parts\":[{\"text\":\"" + userInput + "\"}]}]}"; // 사용자 입력으로
-				
-				HttpPost postRequest = new HttpPost(geminiUrl);
-				postRequest.setHeader("Content-Type", "application/json"); // 요청 헤더 설정
-				postRequest.setEntity(new StringEntity(jsonInputString, StandardCharsets.UTF_8)); // UTF-8 인코딩
-
-				HttpResponse response = httpClient.execute(postRequest); // 요청 실행
-
-				// 응답 처리
+			try (CloseableHttpResponse response = httpClient.execute(postRequest)) {
 				int statusCode = response.getStatusLine().getStatusCode();
 				if (statusCode == 200) {
 					String responseBody = EntityUtils.toString(response.getEntity());
-					// 응답 파싱 및 출력
-					String reply = parseResponse(responseBody);
-					System.out.println("제미니: " + reply); // AI의 응답 출력
+					return parseResponse(responseBody);
 				} else {
 					String errorResponse = EntityUtils.toString(response.getEntity());
-					System.out.println("오류: " + statusCode + " - 응답 내용: " + errorResponse); // 오류 코드 및 응답 출력
+					return "오류: " + statusCode + " - 응답 내용: " + errorResponse;
 				}
 			}
-			scanner.close();
 		} catch (Exception e) {
-			e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
+			e.printStackTrace();
+			return "예외 발생: " + e.getMessage();
 		}
 	}
 
-
-// 응답을 파싱하여 모델의 답변만 추출
-	private static String parseResponse(String responseBody) {
+	// 응답을 파싱하여 모델의 답변만 추출
+	private String parseResponse(String responseBody) {
 		JSONObject jsonObject = new JSONObject(responseBody);
 		JSONArray candidates = jsonObject.getJSONArray("candidates");
 

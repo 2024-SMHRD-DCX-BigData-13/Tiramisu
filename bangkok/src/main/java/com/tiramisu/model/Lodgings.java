@@ -9,36 +9,36 @@ import lombok.RequiredArgsConstructor;
 @Data // 만능
 public class Lodgings {
 	
-	    // 숙소 아이디 
-	    private Double lod_id;
-	    
-	    // 숙소 명 
-	    private String lod_name;
+	// 숙소 아이디
+	private Double lod_id;
 
-	    // 숙소 종류 
-	    private String lod_type;
+	// 숙소 명
+	private String lod_name;
 
-	    // 숙소 설명 
-	    private String lod_desc;
+	// 숙소 종류
+	private String lod_type;
 
-	    // 전화번호 
-	    private String lod_tel;
+	// 숙소 설명
+	private String lod_desc;
 
-	    // 주소 
-	    private String lod_addr;
+	// 전화번호
+	private String lod_tel;
 
-	    // 최저가격 
-	    private Integer low_price;
+	// 주소
+	private String lod_addr;
 
-	    // 최고 가격 
-	    private Integer high_price;
+	// 최저가격
+	private Integer low_price;
 
-	    // 평점 
-	    private Double lod_ratings;
+	// 최고 가격
+	private Integer high_price;
 
-	    // 위도 
-	    private Double lat;
+	// 평점
+	private Double lod_ratings;
 
-	    // 경도 
-	    private Double lon;
+	// 위도
+	private Double lat;
+
+	// 경도
+	private Double lon;
 }

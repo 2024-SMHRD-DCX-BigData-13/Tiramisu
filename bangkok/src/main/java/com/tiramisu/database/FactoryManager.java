@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class FactoryManager {
+	// SQL문 DB로 보내주는 통로 여는 메소드 수정 X
 	// 프로그램이 시작되자 마자 DBCP 생성
 		private static SqlSessionFactory  sqlSessionFactory;
 		
