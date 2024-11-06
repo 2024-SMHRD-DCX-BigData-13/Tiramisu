@@ -7,10 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="aiRecommened.do">
-	<input type="text" name="input">
-	<input type="submit">
-	</form>
-	<p>${geminiRes }</p>
+	<input type="text" id="input">
+	<input type="submit" id="btn01">
+	<div id="output"></div>
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="assets/js/ie/geminiAjax.js"></script>
 </body>
 </html>

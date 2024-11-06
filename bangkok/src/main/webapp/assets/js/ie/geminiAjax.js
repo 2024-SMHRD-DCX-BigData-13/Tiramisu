@@ -17,7 +17,7 @@ function request(){
 		success : function(res){
 			// 요청이 성공해서, 응답이 이루어진 후에 실행되는 함수
 			// 응답반은 데이터가 자동으로 res에 담김
-			console.log(res);
+			$('#output').html(res);
 		}
 	});
 	

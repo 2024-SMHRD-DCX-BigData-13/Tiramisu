@@ -21,12 +21,12 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		handlerMapping = new HashMap<String, Controller>();
 		// 매핑값에 따른 이동 로직 작성 필요
-		handlerMapping.put("goMain.do", new GoMainCon());
-		handlerMapping.put("goSearch.do", new GoSearchCon());
-		handlerMapping.put("goSearchDetail.do", new GoSearchDetailCon());
-		handlerMapping.put("goAiRecommened.do", new GoAiRecommenedCon());
-		handlerMapping.put("goRank.do", new GoRankCon());
-		handlerMapping.put("aiRecommened.do", new AiRecommenedCon());
+		handlerMapping.put("/goMain.do", new GoMainCon());
+		handlerMapping.put("/goSearch.do", new GoSearchCon());
+		handlerMapping.put("/goSearchDetail.do", new GoSearchDetailCon());
+		handlerMapping.put("/goAiRecommened.do", new GoAiRecommenedCon());
+		handlerMapping.put("/goRank.do", new GoRankCon());
+		handlerMapping.put("/aiRecommened.do", new AiRecommenedCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
