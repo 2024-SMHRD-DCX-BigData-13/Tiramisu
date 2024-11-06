@@ -5,7 +5,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.tiramisu.database.FactoryManager;
 
-public class TableName1DAO {
+public class LodgingsDAO {
 	
 	private SqlSessionFactory factory
 	= FactoryManager.getSqlSessionFactory();

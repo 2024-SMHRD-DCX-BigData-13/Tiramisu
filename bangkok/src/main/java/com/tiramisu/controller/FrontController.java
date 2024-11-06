@@ -26,6 +26,7 @@ public class FrontController extends HttpServlet {
 		handlerMapping.put("goSearchDetail.do", new GoSearchDetailCon());
 		handlerMapping.put("goAiRecommened.do", new GoAiRecommenedCon());
 		handlerMapping.put("goRank.do", new GoRankCon());
+		handlerMapping.put("aiRecommened.do", new AiRecommenedCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
