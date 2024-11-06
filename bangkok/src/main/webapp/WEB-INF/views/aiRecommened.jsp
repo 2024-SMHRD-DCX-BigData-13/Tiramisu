@@ -5,6 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style type="text/css">
+#output{
+ font-size: 1px;
+
+
+
+}
+
+</style>
 </head>
 <body>
 	<input type="text" id="input">

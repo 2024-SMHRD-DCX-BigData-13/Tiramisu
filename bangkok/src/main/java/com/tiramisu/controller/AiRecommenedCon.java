@@ -21,7 +21,7 @@ public class AiRecommenedCon implements Controller {
 		String input = request.getParameter("input");
 		
 		GeminiRecommenedEx gemini = new GeminiRecommenedEx();
-		String geminiRes = gemini.getResponse(input);
+		String geminiRes = gemini.getResponse(input+"여행지 간단하게 추천 해줘");
 		
 		HttpSession session = request.getSession();
 		
