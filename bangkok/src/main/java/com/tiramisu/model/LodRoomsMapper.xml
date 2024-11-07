@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tiramisu.model.LodRoomsMapper">
+
+<select id="selectForLod" resultType="com.tiramisu.model.LodRooms" parameterType="com.tiramisu.model.LodRooms">
+	SELECT * FROM LOD_ROOMS
+	WHERE
+	ROOM_ID = ${}
+	AND LOD_ID = ${}
+</select>
+
+
+</mapper>

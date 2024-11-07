@@ -22,10 +22,11 @@ public class FrontController extends HttpServlet {
 		handlerMapping = new HashMap<String, Controller>();
 		// 매핑값에 따른 이동 로직 작성 필요
 		handlerMapping.put("/goMain.do", new GoMainCon()); // 메인 페이지 이동 메소드
-		handlerMapping.put("/goSearch.do", new GoSearchCon()); // 검색 페이지 이동 메소드
+		handlerMapping.put("/goSearchResult.do", new GoSearchResultCon()); // 검색 페이지 이동 메소드
 		handlerMapping.put("/goSearchDetail.do", new GoSearchDetailCon()); // 검색 결과 페이지(숙소 상세정보 페이지) 이동 메소드
 		handlerMapping.put("/goAiRecommened.do", new GoAiRecommenedCon()); // 제미니 챗봇 페이지 이동 메소드
 		handlerMapping.put("/aiRecommened.do", new AiRecommenedCon()); // 제미니 질문 보내고 답변 받는 메소드
+		handlerMapping.put("/crawler.do", new GoCrawlerTestCon());
 	}
 	// 이 밑은 수정 X
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
