@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 public class Lodgings {
 
 	    // 숙소 아이디 
-	    private Double lod_id;
+	    private int lod_id;
 
 	    // 숙소 명 
 	    private String lod_name;
@@ -36,13 +36,16 @@ public class Lodgings {
 	    // 경도 
 	    private Double lon;
 
-	    // 룸 아이디 
-	    private int room_id;
-
 	    // 체크인 
 	    private String checkin;
 
-	    // 인허가 날짜 
-	    private String inhurga;
+	    // 체크아웃 
+	    private String checkout;
 
+	    // 서비스 
+	    private String service;
+
+	    // 룸 아이디 
+	    private int room_id;
+	    
 }
