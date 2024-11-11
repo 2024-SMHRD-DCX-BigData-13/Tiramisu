@@ -24,6 +24,8 @@
   <!-- 우리가 사용하는 mapper.xml의 위치를 알려주기 -->
   <mappers>
   <mapper resource="com/tiramisu/model/LodgingsMapper.xml"/>
+  <mapper resource="com/tiramisu/model/LodRoomsMapper.xml"/>
+  <mapper resource="com/tiramisu/model/UrlsMapper.xml"/>
   </mappers>
   
 </configuration>

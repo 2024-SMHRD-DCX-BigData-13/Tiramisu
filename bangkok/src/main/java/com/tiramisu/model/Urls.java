@@ -11,12 +11,14 @@ public class Urls {
  private Double url_id;
 
  // 룸 아이디 
- private Double room_id;
+ private int room_id;
 
  // 이미지 URL 
  private String img_url;
 
  // 등록 일자 
  private String create_dt;
+ 
+ private int lod_id;
  
 }

@@ -8,18 +8,37 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.tiramisu.database.FactoryManager;
 
 public class LodgingsDAO {
-	
-	private SqlSessionFactory factory
-	= FactoryManager.getSqlSessionFactory();
-	
-	public List<Lodgings> search(String input) { // (임시 틀) 로직 결정시 수정 필요
-		
-		SqlSession session = factory.openSession( true );
-		List<Lodgings> lods =  session.selectList("search", '%'+input+'%');
-		
+
+	private SqlSessionFactory factory = FactoryManager.getSqlSessionFactory();
+
+	public Lodgings selectForDesc(String input) { // (임시 틀) 로직 결정시 수정 필요
+
+		SqlSession session = factory.openSession(true);
+		Lodgings lods = session.selectOne("selectForDesc", input);
+		session.close();
 		return lods;
 	}
-	
-	
-	
+
+	public List<Lodgings> selectForSearch(Lodgings lod) { // (임시 틀) 로직 결정시 수정 필요
+
+		SqlSession session = factory.openSession(true);
+		List<Lodgings> lods = session.selectList("selectForSearch", lod);
+		session.close();
+		return lods;
+	}
+
+	public List<Lodgings> selectForDetail(String lodId) { // (임시 틀) 로직 결정시 수정 필요
+
+		SqlSession session = factory.openSession(true);
+		List<Lodgings> lods = session.selectList("selectForSearch", lodId);
+		session.close();
+		return lods;
+	}
+
+	public List<Lodgings> selectForRating() {
+		SqlSession session = factory.openSession(true);
+		List<Lodgings> lods = session.selectList("selectForRatingLod");
+		session.close();
+		return lods;
+	}
 }

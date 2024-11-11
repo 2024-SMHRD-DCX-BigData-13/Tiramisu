@@ -27,6 +27,7 @@ public class FrontController extends HttpServlet {
 		handlerMapping.put("/goAiRecommened.do", new GoAiRecommenedCon()); // 제미니 챗봇 페이지 이동 메소드
 		handlerMapping.put("/aiRecommened.do", new AiRecommenedCon()); // 제미니 질문 보내고 답변 받는 메소드
 		handlerMapping.put("/crawler.do", new GoCrawlerTestCon());
+		handlerMapping.put("/geodo.do", new GeodoCon());
 	}
 	// 이 밑은 수정 X
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
