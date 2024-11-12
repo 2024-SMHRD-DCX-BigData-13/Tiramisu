@@ -134,30 +134,30 @@
 				<ul class="top-items-list">
 					<!-- foreach 사용 -->
 <!-- RatingLod와 RatingUrl을 6개씩 묶어서 li 태그로 출력 -->
-<c:forEach var="index" begin="0" end="5">
-    <li>
-        <!-- form을 사용하여 데이터를 전송 -->
-        <form action="goDetails.do" method="post">
-            <!-- lod_id를 숨겨서 전송 -->
-            <input type="hidden" name="lod_id" value="${RatingLod[index].lod_id}">
-
-            <!-- span 태그는 인덱스를 표시 -->
-            <span>${index + 1}</span>
-
-            <!-- 이미지 태그에서 src는 RatingUrl의 img_url 사용 -->
-            <img src="${RatingUrl[index].img_url}" alt="thumbnail">
-
-            <div class="top-div-text">
-                <!-- RatingLod에서 해당 인덱스에 맞는 항목 출력 -->
-                <p>숙소 이름: ${RatingLod[index].lod_name}</p>
-                <p>숙소 설명: ${RatingLod[index].lod_desc}</p>
-            </div>
-
-            <!-- 전송 버튼 -->
-            <button type="submit">상세 보기</button>
-        </form>
-    </li>
-</c:forEach>
+				<c:forEach var="index" begin="0" end="5">
+				    <li>
+				        <!-- form을 사용하여 데이터를 전송 -->
+				        <form action="goDetails.do" method="post">
+				            <!-- lod_id를 숨겨서 전송 -->
+				            <input type="hidden" name="lod_id" value="${RatingLod[index].lod_id}">
+				
+				            <!-- span 태그는 인덱스를 표시 -->
+				            <span>${index + 1}</span>
+				
+				            <!-- 이미지 태그에서 src는 RatingUrl의 img_url 사용 -->
+				            <img src="${RatingUrl[index].img_url}" alt="thumbnail">
+				
+				            <div class="top-div-text">
+				                <!-- RatingLod에서 해당 인덱스에 맞는 항목 출력 -->
+				                <p>숙소 이름: ${RatingLod[index].lod_name}</p>
+				                <p>숙소 설명: ${RatingLod[index].lod_desc}</p>
+				            </div>
+				
+				            <!-- 전송 버튼 -->
+				            <button type="submit">상세 보기</button>
+				        </form>
+				    </li>
+				</c:forEach>
 
 
 <!-- 

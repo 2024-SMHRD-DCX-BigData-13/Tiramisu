@@ -126,7 +126,7 @@
     height: auto;
 
 }
-.top-items-list a {
+.top-items-list > li form {
     box-sizing: border-box;
     padding: 10px 0;
     display: inline-block;
@@ -135,7 +135,8 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
 }
-.top-items-list a:hover {
+.top-items-list > li form:hover {
+	cursor: pointer;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .top-items-list span {
