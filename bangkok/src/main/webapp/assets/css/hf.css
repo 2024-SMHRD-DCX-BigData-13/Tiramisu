@@ -42,7 +42,7 @@ header {
     width: 30vw;
     max-width: 440px;
     height: 36px;
-    background-image: url("../img/search.png");
+    background-image: url("./assets/img/search.png");
     background-repeat: no-repeat;
     background-position: 96% 42%;
     background-size: 24px;

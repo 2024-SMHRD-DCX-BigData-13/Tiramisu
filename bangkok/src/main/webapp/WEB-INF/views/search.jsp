@@ -17,8 +17,8 @@
         <header>
             <div class="header-wrap">
                 <h1 class="logo">
-                    <a href="goIndex.do">
-                        <img src="assets/img/logo.png" alt="logo">
+                    <a href="/">
+                        <img src="./assets/img/logo.png" alt="logo">
                     </a>
                 </h1>
                 <div class="search">

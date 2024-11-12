@@ -28,17 +28,25 @@ public class GoIndexCon implements Controller {
 		 * request.setAttribute("result", result);
 		 */
 		String type = request.getParameter("type");
-		
+
 		UrlsDAO url = new UrlsDAO();
 		LodgingsDAO lod = new LodgingsDAO();
-		
-		List<Urls> RatingUrlRes = url.selectForRating();
 		List<Lodgings> RatingLodRes = lod.selectForRating();
-		
-		request.setAttribute("RatingLod", RatingLodRes);
-		request.setAttribute("RatingUrl", RatingUrlRes);
+		List<List<Urls>> allLodsUrls = new ArrayList<>();
+		List<Urls> RatingUrlRes = null;
+		for (Lodgings lodss : RatingLodRes) {
+			int lodId = lodss.getLod_id();
+			RatingUrlRes = url.selectForRating(lodId);
+			if (!RatingUrlRes.isEmpty()) {
+				allLodsUrls.add(List.of(RatingUrlRes.get(0)));
+			}
+			System.out.println(lodss.getLod_id());
+			System.out.println(allLodsUrls);
+		}
 
-		
+		request.setAttribute("RatingLod", RatingLodRes);
+		request.setAttribute("RatingUrl", allLodsUrls);
+
 		return "index";
 	}
 

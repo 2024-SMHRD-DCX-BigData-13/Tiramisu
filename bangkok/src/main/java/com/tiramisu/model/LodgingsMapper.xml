@@ -18,7 +18,7 @@
 	
 	</select>
 	
-	<select id="selectForDetail" parameterType="com.tiramisu.model.Lodgings" resultType="com.tiramisu.model.Lodgings">
+	<select id="selectForDetailLods" parameterType="com.tiramisu.model.Lodgings" resultType="com.tiramisu.model.Lodgings">
 	
 	    SELECT *
         FROM lodgings

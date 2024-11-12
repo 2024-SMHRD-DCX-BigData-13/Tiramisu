@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tiramisu.model.LodRoomsMapper">
 
-<select id="selectForDetail" resultType="com.tiramisu.model.LodRooms" parameterType="com.tiramisu.model.LodRooms">
+<select id="selectForDetailRooms" resultType="com.tiramisu.model.LodRooms" parameterType="com.tiramisu.model.LodRooms">
         SELECT *
         FROM lod_rooms
         WHERE lod_id = #{lod_id}

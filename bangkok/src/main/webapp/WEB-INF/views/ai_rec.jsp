@@ -17,8 +17,8 @@
         <header>
             <div class="header-wrap">
                 <h1 class="logo">
-                    <a href="goIndex.do">
-                        <img src="assets/img/logo.png" alt="logo">
+                    <a href="/">
+                        <img src="./assets/img/logo.png" alt="logo">
                     </a>
                 </h1>
                 <div class="search">
@@ -101,21 +101,27 @@
             <div class="wrap">
                 <div class="talk">
                     <div class="ai-say">
+                    	<!-- ai에 쓸 아이콘 이미지 -->
                         <img class="ai-icon" src="https://placehold.co/80" alt="profile">
+                        <!-- ai 출력 내용(답변여부에 따라 출력함) -->
                         <div class="ai-text-box">
                             <p>tincidunt id leo. Nulla nisi enim, hendrerit sit amet dapibus nec, ornare eu massa. Nulla vehicula ex et tristique pellentesque. Curabitur sodales eu nibh ut sodales. Nullam ac lacus cursus, faucibus est quis, ornare quam. Sed risus ante, vehicula at tristique porttitor, molestie a enim.</p>
                         </div>
                     </div>
+                    <!-- ai 출력 내용에 따른 선택지 -->
                     <div class="selecter-box">선택지 표시</div>
+                    <!-- 선택지에 따라 내용 출력 -->
                     <div class="say">
                         <div class="text-box">Duis elementum faucibus orci, ut sodales nulla laoreet sed. In hac habitasse platea dictumst. Sed sed egestas diam. Aenean malesuada ac tortor vitae pellentesque. Proin eu sodales urna. Pellentesque ac dui nec purus viverra eleifend a sollicitudin neque. Sed pellentesque leo id massa ornare tempor.</div>
                     </div>
                     <div class="ai-say">
                         <img class="ai-icon" src="https://placehold.co/80" alt="profile">
+                        <!-- ai 출력 내용(답변여부에 따라 출력함) -->
                         <div class="ai-text-box">
                             <p>tincidunt id leo. Nulla nisi enim, hendrerit sit amet dapibus nec, ornare eu massa. Nulla vehicula ex et tristique pellentesque. Curabitur sodales eu nibh ut sodales. Nullam ac lacus cursus, faucibus est quis, ornare quam. Sed risus ante, vehicula at tristique porttitor, molestie a enim.</p>
                         </div>
-                </div>
+                	</div>
+            	</div>
             </div>
         </main>
         <!--  -->
@@ -127,7 +133,6 @@
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script src="assets/js/ie/script.js"></script>
         <script src="assets/js/ie/hf.js"></script>
 		<script src="assets/js/ie/geminiAjax.js"></script>
     </body>

@@ -17,8 +17,8 @@
         <header>
             <div class="header-wrap">
                 <h1 class="logo">
-                    <a href="goIndex.do">
-                        <img src="assets/img/logo.png" alt="logo">
+                    <a href="/">
+                        <img src="./assets/img/logo.png" alt="logo">
                     </a>
                 </h1>
                 <div class="search">
@@ -123,7 +123,6 @@
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script src="assets/js/ie/script.js"></script>
-        <script src="assets/js/ie/hf.js"></script>
+        <script src="./assets/js/ie/hf.js"></script>
     </body>
 </html>

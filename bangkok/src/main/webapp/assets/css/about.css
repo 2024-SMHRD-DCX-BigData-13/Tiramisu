@@ -4,8 +4,11 @@
 
 /*  */
 .about-banner {
-    width: 100%;
+    margin: 0;
+    width: 100vw;
+    max-width: 1200px;
     height: 60vh;
+    max-height: 520px;
 }
 .about-banner > img {
     width: 100%;

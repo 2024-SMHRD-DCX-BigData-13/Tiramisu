@@ -3,57 +3,69 @@
     width: 100vw;
     height: 340px;
     margin: 0;
-    border: 2px solid rgb(221, 202, 240);
+    border-top: 2px solid rgb(221, 202, 240);
+    border-bottom: 2px solid rgb(221, 202, 240);
+    position: relative;
+    overflow: hidden;
 }
-#banner > ul {
-    display: flex;
+.slider-wrap {
+    display: inline-flex;
+    align-items: center;
     gap: 30px;
-    width: 100%;
     height: 340px;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-#banner ul.fixed {
-    transition: transform 0s;
-}
-.img-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 720px;
-    height: 200px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    flex-basis: 360px;
-    transition: all 0.3s ease;
-    z-index: 1;
+    box-sizing: border-box;
+    transition: transform 0.6s ease;
     position: relative;
 }
-.img-slider.highlight {
-    z-index: 10;
-    transform: scale(1.1);
-}
-.img-slider > img {
-    width: 100%;
-    max-width: 420px;
-    max-height: 260px;
-    height: auto;
+.img-slider {
+    float: left;
+    width: 360px !important;
+    height: 200px;
     opacity: 60%;
-    object-fit: cover;
-    object-position: center;
-    transition: all 0.2s ease;
+    z-index: 1;
+    transition: all 0.3s ease;
+    position: relative;
 }
-.img-slider > img:hover {
+.img-slider:hover {
     cursor: pointer;
     width: 420px;
     height: 260px;
     opacity: 100%;
 }
-.img-slider > img.highlight {
-    width: 420px;
+.img-slider.highlight {
+    display: flex;
+    position: relative;
+    width: 920px !important;
     height: 260px;
     opacity: 100%;
+    z-index: 10;
+}
+.img-slider.highlight > img {
+    float: left;
+}
+.img-slider.highlight .banner-text {
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    padding: 24px;
+    width: 500px;
+    height: 260px;
+}
+.img-slider.highlight .banner-text > h2 {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+.img-slider.highlight .banner-text > p {
+    float: left;
+}
+.img-slider > img {
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    object-position: center;
 }
 .banner-text {
     display: none;
@@ -67,10 +79,6 @@
     transition: all 0.3s ease;
 }
 
-.img-slider.highlight .banner-text {
-    display: block;
-    left: 420px;
-}
 
 /*  */
 #search-result {
