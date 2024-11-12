@@ -217,3 +217,8 @@
     color: #9167bbff;
     width: 90%;
 }
+.searchImg {
+    width: 260px;
+    height: 280px;
+    object-fit: cover; /* 이미지 비율에 맞게 크기 조정 */
+}

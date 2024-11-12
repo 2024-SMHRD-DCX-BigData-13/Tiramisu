@@ -22,16 +22,15 @@
 
 	</select>
 
-	<select id="selectForSearch"
-		resultType="com.tiramisu.model.Urls"
-		parameterType="com.tiramisu.model.Lodgings">
+	<select id="selectForSearchUrls"
+		resultType="com.tiramisu.model.Urls">
 
-		SELECT u.img_url
-		FROM urls u
-		JOIN lodgings l ON u.lod_id =
-		l.lod_id
-		WHERE l.lod_addr = #{lod_addr} OR l.lod_name = #{lod_name} OR
-		l.lod_type = #{lod_type}
+		SELECT u.img_url, u.lod_id
+        FROM urls u
+        JOIN lodgings l ON u.lod_id = l.lod_id
+        WHERE l.lod_addr LIKE '%' || #{lod} || '%'
+           OR l.lod_name LIKE '%' || #{lod} || '%'
+           OR l.lod_type LIKE '%' || #{lod} || '%'
 
 	</select>
 

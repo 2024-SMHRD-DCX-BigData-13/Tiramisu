@@ -19,10 +19,10 @@ public class LodgingsDAO {
 		return lods;
 	}
 
-	public List<Lodgings> selectForSearch(Lodgings lod) { // (임시 틀) 로직 결정시 수정 필요
+	public List<Lodgings> selectForSearch(String lod) { // (임시 틀) 로직 결정시 수정 필요
 
 		SqlSession session = factory.openSession(true);
-		List<Lodgings> lods = session.selectList("selectForSearch", lod);
+		List<Lodgings> lods = session.selectList("selectForSearchLods", lod);
 		session.close();
 		return lods;
 	}

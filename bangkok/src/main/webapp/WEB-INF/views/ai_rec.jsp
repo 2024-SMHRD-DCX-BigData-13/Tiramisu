@@ -17,7 +17,7 @@
         <header>
             <div class="header-wrap">
                 <h1 class="logo">
-                    <a href="/">
+                    <a href="goIndex.do">
                         <img src="./assets/img/logo.png" alt="logo">
                     </a>
                 </h1>
@@ -82,7 +82,7 @@
                             <a href="#">AI 추천</a>
                             <ul class="sub-menu">
                                 <li><a href="#">나를 위한 숙소 찾기</a></li>
-                                <li><a href="#">AI추천 여행지</a></li>
+                                <li><a href="goAiRec.do">AI추천 여행지</a></li>
                             </ul>
                         </li>
                         <li>

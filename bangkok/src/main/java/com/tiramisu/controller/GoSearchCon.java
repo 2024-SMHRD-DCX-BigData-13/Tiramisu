@@ -18,18 +18,13 @@ public class GoSearchCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String input1 = request.getParameter("input1");
-		String input2 = request.getParameter("input2");
-		
+		String input1 = request.getParameter("search");
+//		String input2 = request.getParameter("input2");
 		UrlsDAO urls = new UrlsDAO();
 		LodgingsDAO lods = new LodgingsDAO();
-		Lodgings lod = new Lodgings();
 		
-		lod.setLod_addr(input1);
-		lod.setLod_name(input2);
-		
-		List<Lodgings> lodRes = lods.selectForSearch(lod);
-		List<Urls> urlRes = urls.selectForSearch(lod);
+		List<Lodgings> lodRes = lods.selectForSearch(input1);
+		List<Urls> urlRes = urls.selectForSearch(input1);
 		request.setAttribute("lodRes", lodRes);
 		request.setAttribute("urlRes", urlRes);
 		return "search";

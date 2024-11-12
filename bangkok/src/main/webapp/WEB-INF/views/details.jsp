@@ -80,7 +80,7 @@
 					<li><a href="#">AI 추천</a>
 						<ul class="sub-menu">
 							<li><a href="#">나를 위한 숙소 찾기</a></li>
-							<li><a href="#">AI추천 여행지</a></li>
+							<li><a href="goAiRec.do">AI추천 여행지</a></li>
 						</ul></li>
 					<li><a href="#">여행지</a>
 						<ul class="sub-menu">
@@ -105,8 +105,9 @@
 							<h2>${lodging.lod_name }</h2>
 							<p>
 								주소 : ${lodging.lod_addr}<br> 전화번호 : ${lodging.lod_tel }<br>
-								체크인 시간 : ${lodging.checkin }/${lodging.checkout }<br> 테마 :
-								${lodging.lod_type }
+								체크인 시간 : ${lodging.checkin }/${lodging.checkout }<br> 
+								테마 : ${lodging.lod_type }<br>
+								평점 : ★${lodging.lod_ratings }
 							</p>
 
 							<h3>인허가 정보</h3>

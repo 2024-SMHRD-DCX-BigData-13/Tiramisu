@@ -22,11 +22,11 @@ public class UrlsDAO {
 		return urls;
 	}
 	
-	public List<Urls> selectForSearch(Lodgings lod) { // (임시 틀) 로직 결정시 수정 필요
+	public List<Urls> selectForSearch(String lod) { // (임시 틀) 로직 결정시 수정 필요
 
 		SqlSession session = factory.openSession(true);
 		
-		List<Urls> urls = session.selectOne("selectForSearch",lod);
+		List<Urls> urls = session.selectList("selectForSearchUrls",lod);
 		
 		session.close();
 		
