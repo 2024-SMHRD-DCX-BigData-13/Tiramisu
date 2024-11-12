@@ -28,7 +28,7 @@
 	
 	<select id="selectForRatingLod" resultType="com.tiramisu.model.Lodgings">
 	
-		SELECT lod_name,lod_desc
+		SELECT lod_name,lod_desc,lod_id
     	FROM lodgings
     	ORDER BY lod_ratings DESC
 	
