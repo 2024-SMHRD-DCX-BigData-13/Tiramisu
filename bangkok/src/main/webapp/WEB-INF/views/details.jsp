@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,7 +145,7 @@
 			</div>
 			<div class="info-box">
 				<c:forEach var="url" items="${url}" varStatus="status">
-					<c:if test="${status.index == 1}">
+					<c:if test="${status.index == 3}">
 						<img src="${url.img_url }" alt="img" id="rooms">
 						<div class="info-side">
 					</c:if>
@@ -183,8 +184,8 @@
 				<div class="service-box">
 					<div class="info-text">
 						<c:forEach var="lod" items="${lod}">
-								<img src="https://placehold.co/34" alt="icon">
-								<p>${lod.service }</p>
+								<!-- <img src="https://placehold.co/34" alt="icon"> -->
+								<p> ${fn:replace(fn:replace(lod.service, ',', '<br/> '), ' ', '')}</p>
 						</c:forEach>
 					</div>
 				</div>
