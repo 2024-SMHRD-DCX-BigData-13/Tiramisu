@@ -15,7 +15,7 @@ public class UrlsDAO {
 
 		SqlSession session = factory.openSession(true);
 		
-		List<Urls> urls = session.selectOne("selectForType",input);
+		List<Urls> urls = session.selectList("selectForType",input);
 		
 		session.close();
 		

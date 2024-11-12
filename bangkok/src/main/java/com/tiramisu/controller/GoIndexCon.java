@@ -14,7 +14,7 @@ import com.tiramisu.model.Urls;
 import com.tiramisu.model.UrlsDAO;
 import com.tiramisu.model.naverMaps;
 
-public class GoMainCon implements Controller {
+public class GoIndexCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
@@ -39,7 +39,7 @@ public class GoMainCon implements Controller {
 //		request.setAttribute("TypeUrl", TypeUrlRes);
 //		
 //		
-		return "geodo";
+		return "index";
 	}
 
 }

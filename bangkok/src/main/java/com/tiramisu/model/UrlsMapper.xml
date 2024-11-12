@@ -25,7 +25,7 @@
 		SELECT u.img_url
 		FROM urls u
 		JOIN lodgings l ON u.lod_id = l.lod_id
-		WHERE l.lod_addr = #{lod_addr} OR l.lod_name = #{lod_name}
+		WHERE l.lod_addr = #{lod_addr} OR l.lod_name = #{lod_name} OR l.lod_type = #{lod_type}
 
 	</select>
 

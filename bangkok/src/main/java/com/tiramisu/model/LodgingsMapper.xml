@@ -14,7 +14,7 @@
 	
 	    SELECT lod_name, lod_desc
         FROM lodgings
-        WHERE lod_addr = #{lod_addr} OR lod_name = #{lod_name}
+        WHERE lod_addr = #{lod_addr} OR lod_name = #{lod_name} OR lod_type = #{lod_type}
 	
 	</select>
 	

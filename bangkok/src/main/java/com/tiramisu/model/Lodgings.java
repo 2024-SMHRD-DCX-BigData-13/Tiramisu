@@ -44,5 +44,11 @@ public class Lodgings {
 
 	// 서비스
 	private String service;
+	
+	// 인허가 시작일
+	private String inhurga_start;
+	
+	// 인허가 종료일
+	private String inhurga_end;
 
 }

@@ -12,7 +12,7 @@ import org.apache.http.protocol.HTTP;
 
 import com.tiramisu.model.GeminiRecommened;
 
-public class AiRecommenedCon implements Controller {
+public class AiRecCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)

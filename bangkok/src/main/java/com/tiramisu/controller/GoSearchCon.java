@@ -13,7 +13,7 @@ import com.tiramisu.model.LodgingsDAO;
 import com.tiramisu.model.Urls;
 import com.tiramisu.model.UrlsDAO;
 
-public class GoSearchResultCon implements Controller {
+public class GoSearchCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
@@ -32,7 +32,7 @@ public class GoSearchResultCon implements Controller {
 		List<Urls> urlRes = urls.selectForSearch(lod);
 		request.setAttribute("lodRes", lodRes);
 		request.setAttribute("urlRes", urlRes);
-		return "searchResult";
+		return "search";
 	}
 
 }

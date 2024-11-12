@@ -1,17 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="stylesheet" href="assets/css/hf.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
         <header>
             <div class="header-wrap">
                 <h1 class="logo">
-                    <a href="/">
-                        <img src="./img/logo.png" alt="logo">
+                    <a href="goIndex.do">
+                        <img src="assets/img/logo.png" alt="logo">
                     </a>
                 </h1>
                 <div class="search">
@@ -22,36 +29,42 @@
                     <div class="left-text">
                         <p>상세검색</p>
                     </div>
-                    <div class="right-text">
-                        <p>여행지</p>
-                        <p>여행자</p>
-                    </div>
-                    <div class="right-box">
-                        <ul class="destination-button button-grid">
-                            <li><button>강원</button></li>
-                            <li><button>경기</button></li>
-                            <li><button>경북</button></li>
-                            <li><button>경상</button></li>
-                            <li><button>광주</button></li>
-                            <li><button>대구</button></li>
-                            <li><button>대전</button></li>
-                            <li><button>부산</button></li>
-                            <li><button>서울</button></li>
-                            <li><button>인천</button></li>
-                            <li><button>전남</button></li>
-                            <li><button>전북</button></li>
-                            <li><button>제주</button></li>
-                            <li><button>충남</button></li>
-                            <li><button>충북</button></li>
-                        </ul>
-                        <input type="number" name="traveler">
+                    <div class="right-wrap">
+                        <div class="right-box">
+                            <p>여행지</p>
+                            <ul class="destination-button button-grid">
+                                <li><button>강원</button></li>
+                                <li><button>경기</button></li>
+                                <li><button>경북</button></li>
+                                <li><button>경상</button></li>
+                                <li><button>광주</button></li>
+                                <li><button>대구</button></li>
+                                <li><button>대전</button></li>
+                                <li><button>부산</button></li>
+                                <li><button>서울</button></li>
+                                <li><button>인천</button></li>
+                                <li><button>전남</button></li>
+                                <li><button>전북</button></li>
+                                <li><button>제주</button></li>
+                                <li><button>충남</button></li>
+                                <li><button>충북</button></li>
+                            </ul>
+                        </div>
+                        <div class="right-box">
+                            <p>여행자</p>
+                            <input type="number" name="traveler">
+                        </div>
                     </div>
                 </div>
                 <!-- nav -->
                 <div class="hamburger-wrap">
                     <button class="hamburger">
                         <p class="map-name">메뉴보기</p>
-                        <img src="./img/hamburger.png" alt="hamburger-icon">
+                        <div class="hamburger-icon">
+                            <div class="icon1"></div>
+                            <div class="icon2"></div>
+                            <div class="icon3"></div>
+                        </div>
                     </button>
                 </div>
                 <nav>
@@ -87,14 +100,14 @@
         <main>
             <div class="wrap">
                 <section id="banner">
-                    <div class="slider-overlay">
-                        <button class="arrow-left"><img src="./img/arrow-left.png" alt="arrow-left"></button>
-                        <button class="arrow-right"><img src="./img/arrow-right.png" alt="arrow-right"></button>
+                    <div class="slide-overlay">
+                        <button class="arrow-left"><img src="assets/img/arrow-left.png" alt="arrow-left"></button>
+                        <button class="arrow-right"><img src="assets/img/arrow-right.png" alt="arrow-right"></button>
                         <div class="progress-bar">
                             <div class="progress"></div>
                         </div>
                     </div>
-                    <div class="slider-item">
+                    <div class="slide-item">
                         <!-- jstl로 배너 개수 변경 -->
                         <div class="slide-img">
                             <img src="https://image.goodchoice.kr/resize_792x480/affiliate/2024/03/11/65eec572af91e.jpg" alt="">
@@ -113,9 +126,9 @@
                         <h2>인기 숙소</h2>
                         <a href="#">더보기</a>
                     </div>
-                    <ul class="top-items-list">
+                    <ul class="top-items-list" id="topLod_id">
                         <!-- foreach사용 -->
-                        <li>
+                        <li data-value=${ratings.lod_id }>
                             <a href="#">
                                 <span>1</span>
                                 <img src="https://placehold.co/160x160" alt="thumbnail">
@@ -183,85 +196,94 @@
                         <h2>테마별 숙소</h2>
                     </div>
                     <div class="theme-tabs">
-                        <button class="hotel" data-content="불러올 슬라이드 컨텐츠">
+                        <button class="hotel" data-content="불러올 슬라이드 컨텐츠" data-value=${types.lod_id }>
                             <p>호텔</p>
                             <img src="http://placehold.co/320x280" alt="테마버튼사진">
                         </button>
-                        <button class="pension" data-content="불러올 슬라이드 컨텐츠">
+                        <button class="pension" data-content="불러올 슬라이드 컨텐츠" data-value=${types.lod_id }>
                             <p>펜션</p>
-                            <img src="http://placehold.co/320x280" alt="테마버튼사진">
+                            <img src="http://placehold.co/320x280" alt="테마버튼사진" data-value=${types.lod_id }>
                         </button>
-                        <button class="hanok" data-content="불러올 슬라이드 컨텐츠">
+                        <button class="hanok" data-content="불러올 슬라이드 컨텐츠" data-value=${types.lod_id }>
                             <p>한옥</p>
                             <img src="http://placehold.co/320x280" alt="테마버튼사진">
                         </button>
-                        <button class="guesthouse" data-content="불러올 슬라이드 컨텐츠">
+                        <button class="guesthouse" data-content="불러올 슬라이드 컨텐츠" data-value=${types.lod_id }>
                             <p>게스트하우스</p>
                             <img src="http://placehold.co/320x280" alt="테마버튼사진">
                         </button>
-                        <button class="oceanview" data-content="불러올 슬라이드 컨텐츠">
+                        <button class="oceanview" data-content="불러올 슬라이드 컨텐츠" data-value=${types.lod_id }>
                             <p>오션뷰</p>
                             <img src="http://placehold.co/320x280" alt="테마버튼사진">
                         </button>
-                        <button class="swimmingpool" data-content="불러올 슬라이드 컨텐츠">
+                        <button class="swimmingpool" data-content="불러올 슬라이드 컨텐츠" data-value=${types.lod_id }>
                             <p>수영장</p>
                             <img src="http://placehold.co/320x280" alt="테마버튼사진">
                         </button>
-                        <button class="petfriendly" data-content="불러올 슬라이드 컨텐츠">
+                        <button class="petfriendly" data-content="불러올 슬라이드 컨텐츠" data-value=${types.lod_id }>
                             <p>반려동물동반</p>
                             <img src="http://placehold.co/320x280" alt="테마버튼사진">
                         </button>
                     </div>
                     <div class="theme-slider">
-                        <div class="theme-item">
-                            <img src="https://placehold.co/300x200" alt="item">
-                            <div class="theme-text">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
-                            </div>
-                        </div>
-                        <div class="theme-item">
-                            <img src="https://placehold.co/300x200" alt="item">
-                            <div class="theme-text">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
-                            </div>
-                        </div>
-                        <div class="theme-item">
-                            <img src="https://placehold.co/300x200" alt="item">
-                            <div class="theme-text">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
-                            </div>
-                        </div>
-                        <div class="theme-item">
-                            <img src="https://placehold.co/300x200" alt="item">
-                            <div class="theme-text">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
-                            </div>
-                        </div>
-                        <div class="theme-item">
-                            <img src="https://placehold.co/300x200" alt="item">
-                            <div class="theme-text">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
-                            </div>
-                        </div>
-                        <div class="theme-item">
-                            <img src="https://placehold.co/300x200" alt="item">
-                            <div class="theme-text">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
-                            </div>
-                        </div>
-                        <div class="theme-item">
-                            <img src="https://placehold.co/300x200" alt="item">
-                            <div class="theme-text">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
-                            </div>
-                        </div>
+                        <ul class="theme-item">
+                            <li data-value=${types.lod_id }>
+                                <img src="https://placehold.co/280x200" alt="item">
+                                <div class="theme-text">
+                                    <h3>Lorem ipsum dolor sit amet</h3>
+                                    <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
+                                </div>
+                            </li>
+                            <li data-value=${types.lod_id }>
+                                <img src="https://placehold.co/280x200" alt="item">
+                                <div class="theme-text">
+                                    <h3>Lorem ipsum dolor sit amet</h3>
+                                    <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
+                                </div>
+                            </li>
+                            <li data-value=${types.lod_id }>
+                                <img src="https://placehold.co/280x200" alt="item">
+                                <div class="theme-text">
+                                    <h3>Lorem ipsum dolor sit amet</h3>
+                                    <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
+                                </div>
+                            </li>
+                            <li data-value=${types.lod_id }>
+                                <img src="https://placehold.co/280x200" alt="item">
+                                <div class="theme-text">
+                                    <h3>Lorem ipsum dolor sit amet</h3>
+                                    <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
+                                </div>
+                            </li>
+                            <li data-value=${types.lod_id }>
+                                <img src="https://placehold.co/280x200" alt="item">
+                                <div class="theme-text">
+                                    <h3>Lorem ipsum dolor sit amet</h3>
+                                    <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
+                                </div>
+                            </li>
+                            <li data-value=${types.lod_id }>
+                                <img src="https://placehold.co/280x200" alt="item">
+                                <div class="theme-text">
+                                    <h3>Lorem ipsum dolor sit amet</h3>
+                                    <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
+                                </div>
+                            </li>
+                            <li data-value=${types.lod_id }>
+                                <img src="https://placehold.co/280x200" alt="item">
+                                <div class="theme-text">
+                                    <h3>Lorem ipsum dolor sit amet</h3>
+                                    <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
+                                </div>
+                            </li>
+                            <li data-value=${types.lod_id }>
+                                <img src="https://placehold.co/280x200" alt="item">
+                                <div class="theme-text">
+                                    <h3>Lorem ipsum dolor sit amet</h3>
+                                    <p>Quisque ante mi, dapibus in auctor in, maximus sit amet risus. Nullam id viverra est. Cras a neque nunc. Quisque in tortor non massa posuere posuere.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </section>
                 <!--  -->
@@ -269,7 +291,7 @@
                     <div class="top-text">
                         <h2>지역별 숙소</h2>
                     </div>
-                    <div class="region-imgs">
+                    <div class="region-imgs" data-value=${addr.lod_id }>
                         <div class="big-img">
                             <img src="https://placehold.co/542x400" alt="큰썸네일">
                             <div class="region-overlay">설명 텍스트</div>
@@ -299,12 +321,13 @@
         <!--  -->
         <footer>
             <div class="footer-wrap">
-                <div class="f-text-h"></div>
+                <div class="f-text-h">dsadasdasda</div>
                 <div class="f-text"></div>
                 <div class="f-connect"></div>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script src="./script/script.js"></script>
+        <script src="./script/i.js"></script>
+        <script src="./script/hf.js"></script>
     </body>
 </html>
