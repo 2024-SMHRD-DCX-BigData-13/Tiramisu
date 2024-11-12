@@ -1,34 +1,24 @@
-$(document).ready(function() {
-    // 페이지 로드 시 자동으로 요청 보내기
-    request();
-});
+// 위도, 경도 값은 서버에서 전달받은 값을 여기에 설정한다고 가정합니다.
+let latitude = 37.5171818; // 예시 위도 (서울시청)
+let longitude = 126.9112166; // 예시 경도 (서울시청)
 
-function request() {
-    $.ajax({
-        url: 'naverMaps.do',  // 서버로 데이터 전송
-        type: 'get',
-        data: {
-            'lat': 37.5171818,  // 예시 좌표
-            'lon': 126.9112166   // 예시 좌표
-        },
-        dataType: 'json',  // 응답이 JSON으로 처리되도록 지정
-        success: function(response) {
-            console.log(response);  // 응답 확인
+// 네이버 지도 초기화
+function initMap() {
+    // 지도 객체 생성
+    const mapOptions = {
+        center: new naver.maps.LatLng(latitude, longitude), // 중심 좌표 설정
+        zoom: 17 // 지도 확대 정도
+    };
 
-            // 응답이 배열인지 확인하고 4개 이하의 이미지만 처리
-            if (Array.isArray(response) && response.length > 0) {
-                $('#output').empty();  // 기존 콘텐츠를 비우기
-                // 첫 번째부터 네 번째 이미지까지 처리
-                for (let i = 0; i < Math.min(4, response.length); i++) {
-                    var img = $('<img>').attr('src', response[i].img_url).attr('alt', 'Image ' + (i + 1));
-                    $('#output').append(img);  // 각 이미지를 #output에 추가
-                }
-            } else {
-                $('#output').html("응답이 배열이 아니거나 데이터가 없습니다.");
-            }
-        },
-        error: function() {
-            $('#output').html("요청에 실패했습니다.");
-        }
+    const map = new naver.maps.Map("map", mapOptions); // 지도 생성
+
+    // 마커 생성
+    const marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(latitude, longitude), // 마커 위치 설정
+        map: map, // 지도에 마커 추가
+        title: "영등포 라이프스타일 F HOTEL" // 마커 타이틀
     });
-};
+}
+
+// 지도 초기화 함수 호출
+initMap();

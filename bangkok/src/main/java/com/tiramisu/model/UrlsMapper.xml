@@ -3,47 +3,55 @@
 <mapper namespace="com.tiramisu.model.UrlsMapper">
 
 	<select id="selectForType" resultType="com.tiramisu.model.Urls">
-		
-		SELECT u.img_url
-		FROM urls u
-		JOIN lodgings l ON u.lod_id = l.lod_id
-		WHERE l.lod_type = #{lod_type}
-
-	</select>
-
-	<select id="selectForAddr" resultType="com.tiramisu.model.Urls" parameterType="com.tiramisu.model.Lodgings">
-
-    	SELECT u.img_url
-    	FROM urls u
-    	JOIN lodgings l ON u.lod_id = l.lod_id
-   	 	WHERE l.lon = #{lon} AND l.lat = #{lat}
-
-	</select>
-
-	<select id="selectForSearch" resultType="com.tiramisu.model.Urls" parameterType="com.tiramisu.model.Lodgings">
 
 		SELECT u.img_url
 		FROM urls u
 		JOIN lodgings l ON u.lod_id = l.lod_id
-		WHERE l.lod_addr = #{lod_addr} OR l.lod_name = #{lod_name} OR l.lod_type = #{lod_type}
+		WHERE
+		l.lod_type = #{lod_type}
 
 	</select>
 
-	<select id="selectForDetail" resultType="com.tiramisu.model.Urls">
-	
-	    SELECT img_url
-        FROM urls
-        WHERE room_id = #{room_id}
-	
+	<select id="selectForAddr" resultType="com.tiramisu.model.Urls"
+		parameterType="com.tiramisu.model.Lodgings">
+
+		SELECT u.img_url
+		FROM urls u
+		JOIN lodgings l ON u.lod_id = l.lod_id
+		WHERE l.lon = #{lon} AND l.lat = #{lat}
+
 	</select>
-	
-	<select id="selectForRatingUrl" resultType="com.tiramisu.model.Urls">
-	
-	    SELECT u.img_url
-    	FROM urls u
-    	JOIN lodgings l ON u.lod_id = l.lod_id
-    	ORDER BY l.lod_ratings DESC
-	
+
+	<select id="selectForSearch"
+		resultType="com.tiramisu.model.Urls"
+		parameterType="com.tiramisu.model.Lodgings">
+
+		SELECT u.img_url
+		FROM urls u
+		JOIN lodgings l ON u.lod_id =
+		l.lod_id
+		WHERE l.lod_addr = #{lod_addr} OR l.lod_name = #{lod_name} OR
+		l.lod_type = #{lod_type}
+
+	</select>
+
+	<select id="selectForDetailUrls"
+		resultType="com.tiramisu.model.Urls">
+
+		SELECT img_url
+		FROM urls
+		WHERE room_id = #{room_id}
+
+	</select>
+
+	<select id="selectForRatingUrl"
+		resultType="com.tiramisu.model.Urls">
+
+		SELECT u.img_url
+		FROM urls u
+		JOIN lodgings l ON u.lod_id = l.lod_id
+		WHERE u.lod_id = #{lodId}
+
 	</select>
 
 </mapper>
