@@ -17,6 +17,8 @@
     --bar-color: #dddddd;
     --box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	--img-bright: invert(71%) sepia(42%) saturate(5536%) hue-rotate(223deg) brightness(77%) contrast(86%);
+	--ai-text: #f5ebff;
+	--user-text: #bc8aee;
 }
 :root.dark {
 	--logo: url("../img/logo-dark.png");
@@ -36,6 +38,8 @@
     --bar-color: #51366D;
     --box-shadow: 0 14px 28px rgba(145, 103, 187, 0.25), 0 10px 10px rgba(145, 103, 187, 0.22);
 	--img-bright: invert(71%) sepia(42%) saturate(5536%) hue-rotate(223deg) brightness(160%) contrast(86%);
+	--ai-text: #322846;
+	--user-text: #5a3878;
 }
 body {
     background-color: var(--white-color);
