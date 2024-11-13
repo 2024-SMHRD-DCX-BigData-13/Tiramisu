@@ -317,9 +317,9 @@
 	<!--  -->
 	<footer>
 		<div class="footer-wrap">
-			<div class="f-text-h">dsadasdasda</div>
-			<div class="f-text"></div>
-			<div class="f-connect"></div>
+			<div class="f-text-h">DCX 기반 빅데이터 분석 서비스 개발자 과정</div>
+			<div class="f-text">핵심 프로젝트 : 약과 띠라미수</div>
+			<div class="f-connect">전남 목포시 스마트 인재 개발원</div>
 		</div>
 	</footer>
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
