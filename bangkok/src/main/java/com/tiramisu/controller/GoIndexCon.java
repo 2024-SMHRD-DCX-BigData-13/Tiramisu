@@ -23,11 +23,6 @@ public class GoIndexCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/*
-		 * naverMaps maps = new naverMaps(); String result = maps.callNaverApi("서울");
-		 * request.setAttribute("result", result);
-		 */
-		String type = request.getParameter("type");
 
 		UrlsDAO url = new UrlsDAO();
 		LodgingsDAO lod = new LodgingsDAO();
