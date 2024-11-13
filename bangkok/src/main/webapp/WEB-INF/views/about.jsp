@@ -29,7 +29,7 @@
                         <h3>인허가 숙소 조회 서비스</h3>
                         <p>허가 받은 숙소 정보를 제공하고 ai의 여행 코스 추천을 기반으로 사용자의 신뢰도를 높이고 보다 쾌적한 여행이 될 수 있도록 도와주는 서비스</p>
                     </div>
-                    <img src="https://placehold.co/300x220" alt="img">
+                    <img src="https://image.ytn.co.kr/general/jpg/2021/1102/202111020854337568_d.jpg" alt="img">
                </section>
             </div>
         </main>
