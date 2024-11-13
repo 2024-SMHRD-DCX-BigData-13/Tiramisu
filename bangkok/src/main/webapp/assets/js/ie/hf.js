@@ -1,9 +1,20 @@
 // darkmod
 $(document).ready(function() {
+    if(localStorage.getItem('theme') === 'dark') {
+        $('body').addClass('dark').removeClass('light');
+        $(':root').addClass('dark').removeClass('light');
+    }
+
     $("#vButton").click(function(){
         $('body').toggleClass('dark light');
         $(':root').toggleClass('dark light');
-    })
+
+        if ($('body').hasClass('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
 });
 
 //

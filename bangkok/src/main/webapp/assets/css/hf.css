@@ -1,6 +1,8 @@
 :root,
 :root.light {
+	--logo: url("../img/logo.png");
     --main-color: #9167bbff;
+    --button-hover: #9167bbff;
     --white-color: #ffffff;
     --sub-color: #51366D;
     --search-box: #C3A7E0;
@@ -14,9 +16,12 @@
     --unused: #aaaaaa;
     --bar-color: #dddddd;
     --box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	--img-bright: invert(71%) sepia(42%) saturate(5536%) hue-rotate(223deg) brightness(77%) contrast(86%);
 }
 :root.dark {
+	--logo: url("../img/logo-dark.png");
     --main-color: #9167bbff;
+    --button-hover: #C3A7E0;
     --white-color: #121212;
     --sub-color: #C3A7E0;
     --search-box: #9167bbff;
@@ -30,6 +35,7 @@
     --unused: #51366D;
     --bar-color: #51366D;
     --box-shadow: 0 14px 28px rgba(145, 103, 187, 0.25), 0 10px 10px rgba(145, 103, 187, 0.22);
+	--img-bright: invert(71%) sepia(42%) saturate(5536%) hue-rotate(223deg) brightness(160%) contrast(86%);
 }
 body {
     background-color: var(--white-color);
@@ -57,10 +63,10 @@ header {
     width: 30vw;
     min-width: 100px;
     max-width: 300px;
-}
-.logo img {
-    display: block;
-    width: 100%;
+    background-image: var(--logo);
+    background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 /* search */
@@ -75,6 +81,7 @@ header {
     box-sizing: border-box;
     border: 2px solid var(--search-box);
     background-color: var(--white-color);
+    color: var(--text-color);
     border-right: 0;
     border-radius: 30px 0 0 30px;
     caret-color: var(--light-purple);
