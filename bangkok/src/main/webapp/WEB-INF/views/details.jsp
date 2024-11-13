@@ -140,21 +140,24 @@
 		<section id="detail-middle">
 			<div class="info-header">
 				<h2>객실 정보</h2>
-				<button>◀</button>
-				<button>▶</button>
+				<button onclick="valueDown()">◀</button>
+				<button onclick="valueUp()">▶</button>
 			</div>
 			<div class="info-box">
 				<c:forEach var="url" items="${url}" varStatus="status">
 					<c:if test="${status.index == 3}">
 						<img src="${url.img_url }" alt="img" id="rooms">
+						
 						<div class="info-side">
 					</c:if>
 				</c:forEach>
+				
 				<c:forEach var="room" items="${room}" varStatus="status">
-					<c:if test="${status.index == 1}">
+					<c:if test="${status.index == 3}">
 						<div class="info-text">
 							<!-- <img src="https://placehold.co/34" alt="icon"> -->
 							<p>객실명: ${room.room_name }</p>
+							
 						</div>
 						<div class="info-text">
 							<!-- <img src="https://placehold.co/34" alt="icon"> -->
@@ -204,5 +207,6 @@
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script src="assets/js/ie/d.js"></script>
 	<script src="assets/js/ie/hf.js"></script>
+	<script src="assets/js/ie/detail.js"></script>
 </body>
 </html>
