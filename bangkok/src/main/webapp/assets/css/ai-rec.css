@@ -25,7 +25,7 @@
     margin: 0;
     margin-left: 24px;
     position: relative;
-    background: rgb(245, 235, 255);
+    background: var(--ai-text);
     border-radius: .4em;
 }
 .ai-text-box:after {
@@ -36,7 +36,7 @@
     width: 0;
     height: 0;
     border: 12px solid transparent;
-    border-right-color: rgb(245, 235, 255);
+    border-right-color: var(--ai-text);
     border-left: 0;
     border-top: 0;
     margin-left: -10px;
@@ -49,7 +49,7 @@
     height: 30%;
     margin: 0;
     margin-bottom: 60px;
-    border: 2px solid #aaa;
+    border: 2px solid var(--bar-color);
 }
 /*  */
 
@@ -72,7 +72,7 @@
     margin-left: auto;
     margin-right: 12px;
     position: relative;
-    background: rgb(188, 138, 238);
+    background: var(--user-text);
     border-radius: .4em;
 }
 .text-box:after {
@@ -83,18 +83,51 @@
     width: 0;
     height: 0;
     border: 12px solid transparent;
-    border-left-color: rgb(188, 138, 238);
+    border-left-color: var(--user-text);
     border-right: 0;
     border-top: 0;
     margin-right: -10px;
 }
 .user-input{
+	width: 80vw;
+	max-width: 1200px;
 	height: 100px;
-	display: block;
-	position: relative;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	
-	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+input#input,
+input#btn {
+	background-color: var(--white-color);
+}
+input#input {
+	margin-right: 0;
+	width: 70vw;
+	height: 36px;
+	max-width: 600px;
+	padding: 0 24px;
+	border: 2px solid var(--search-box);
+}
+input#input:focus {
+	border: 0;
+	color: var(--text-color);
+	border: 2px solid var(--search-box);
+	border-radius: 0;
+    outline: none;
+}
+input#btn {
+	margin-left: 0;
+	border: var(--bar-color);
+	width: 30vw;
+	height: 40px;
+	max-width: 120px;
+	padding: 0 24px;
+	border: 2px solid var(--search-box);
+	border-left: 0;
+	color: var(--text-color);
+}
+input#btn:hover {
+	cursor: pointer;
+	color: var(--text-color);
+	background-color: var(--search-box);
 }

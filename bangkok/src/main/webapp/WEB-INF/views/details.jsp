@@ -118,7 +118,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="map" class="map" style="width: 100%; height: 400px;"></div>
+			<div id="map" class="map" style="width: 100%; height: 479.5px;"></div>
 		</section>
 		</div>
 	</main>

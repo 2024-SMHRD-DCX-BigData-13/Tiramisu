@@ -167,6 +167,7 @@
     height: 320px;
 }
 .info-side {
+    overflow: hidden;
     width: 50vw;
     max-width: 630px;
     height: 80%;
@@ -191,13 +192,13 @@
 
 /* bottom */
 #detail-bottom {
-    width: 100%;
+    width: 100vw;
     height: 600px;
     margin: 0;
 }
 .detail-left {
     float: left;
-    width: 60vw;
+    width: 100vw;
     max-width: 730px;
     height: 100%;
     margin: 0;
@@ -210,14 +211,17 @@
 }
 .service-box {
     float: left;
-    width: 100%;
+    width: 100vw;
     height: 434px;
     box-sizing: border-box;
     padding: 32px 24px;
     margin-right: 40px;
     border: 1px solid var(--unused);
 }
-#detail-bottom > img {
+
+#map {
+	display: block;
+	margin: 0;
     min-width: 300px;
     width: 50vw;
     max-width: 440px;
