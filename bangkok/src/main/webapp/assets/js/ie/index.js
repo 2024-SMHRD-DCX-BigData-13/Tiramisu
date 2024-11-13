@@ -48,7 +48,7 @@ function updatePageContent(lodgings, urls) {
             // 새로운 리스트 아이템 생성
             const itemHTML = `
                 <li>
-                    <form action="goDetails.do" method="post">
+                    <form action="goDetails.do" method="get">
                         <input type="hidden" name="lod_id" value="${lodging.lod_id}">
                         <img src="${url.img_url}" alt="item" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.src='default-image.jpg'"> <!-- 이미지 높이 줄이기, 비율 유지 -->
                         <div class="theme-text">
