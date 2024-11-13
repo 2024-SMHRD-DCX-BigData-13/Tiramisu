@@ -20,11 +20,12 @@
 	<!--  -->
 	<main>
 		<div class="wrap">
-
 			<div class="talk" id="chat-box">
-				<img class="ai-icon" src="https://placehold.co/80" alt="profile">
-				<div class="ai-text-box">
-					<p>여행지를 입력해주세요</p>
+				<div class="ai-say">
+					<img class="ai-icon" src="https://placehold.co/80" alt="profile">
+					<div class="ai-text-box">
+						<p>여행지를 입력해주세요</p>
+					</div>
 				</div>
 				<!-- 유저의 입력과 AI의 답변이 여기에 동적으로 추가됩니다. -->
 
