@@ -16,11 +16,13 @@
 	<select id="selectForSearchLods"
 		parameterType="com.tiramisu.model.Lodgings"
 		resultType="com.tiramisu.model.Lodgings">
-        SELECT lod_name, lod_desc, lod_id
-        FROM lodgings
-        WHERE lod_addr LIKE '%' || #{lod} || '%'
-           OR lod_name LIKE '%' || #{lod} || '%'
-           OR lod_type LIKE '%' || #{lod} || '%'
+		SELECT lod_name, lod_desc, lod_id
+		FROM lodgings
+		WHERE
+		lod_addr LIKE '%' || #{lod} || '%'
+		OR lod_name LIKE '%' || #{lod} ||
+		'%'
+		OR lod_type LIKE '%' || #{lod} || '%'
 	</select>
 
 	<select id="selectForDetailLods"
@@ -38,7 +40,17 @@
 
 		SELECT lod_name,lod_desc,lod_id
 		FROM lodgings
-		ORDER BY lod_ratings DESC
+		ORDER BY
+		lod_ratings DESC
+
+	</select>
+	<select id="selectForTypeLod"
+		parameterType="com.tiramisu.model.Lodgings"
+		resultType="com.tiramisu.model.Lodgings">
+		SELECT *
+		FROM lodgings
+		WHERE lod_type = #{type}
+
 
 	</select>
 

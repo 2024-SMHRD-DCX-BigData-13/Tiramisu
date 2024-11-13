@@ -27,7 +27,8 @@ public class FrontController extends HttpServlet {
 		handlerMapping.put("/goAbout.do", new GoAboutCon());
 		handlerMapping.put("/aiRec.do", new AiRecCon()); // 제미니 질문 보내고 답변 받는 메소드
 		handlerMapping.put("/naverMaps.do", new NaverMapsCon());
-		handlerMapping.put("/detailsBtn.do", new DetailsBtnCon());
+		handlerMapping.put("/detailsAjax.do", new DetailsAjaxCon());
+		handlerMapping.put("/indexAjax.do", new IndexAjaxCon());
 	}
 	// 이 밑은 수정 X
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

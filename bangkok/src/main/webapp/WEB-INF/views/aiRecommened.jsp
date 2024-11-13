@@ -18,7 +18,7 @@
 </head>
 <body>
 	<input type="text" id="input">
-	<input type="submit" id="btn01">
+	<input type="submit" id="btn">
 	<div id="output"></div>
 	
 	<!-- 
