@@ -52,7 +52,7 @@ function appendUserMessage(message) {
 function appendAIMessage(message) {
 	const aiMessageHtml = `
         <div class="ai-say">
-            <img class="ai-icon" src="https://placehold.co/80" alt="profile">
+            <img class="ai-icon" src="./assets/img/ai-icon.png" alt="profile">
             <div class="ai-text-box">
                 <p>${message}</p>
             </div>

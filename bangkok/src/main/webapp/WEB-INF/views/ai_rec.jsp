@@ -22,7 +22,7 @@
 		<div class="wrap">
 			<div class="talk" id="chat-box">
 				<div class="ai-say">
-					<img class="ai-icon" src="https://placehold.co/80" alt="profile">
+					<img class="ai-icon" src="./assets/img/ai-icon.png" alt="profile">
 					<div class="ai-text-box">
 						<p>여행지를 입력해주세요</p>
 					</div>
