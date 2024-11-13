@@ -19,15 +19,15 @@
         <main>
             <div class="wrap">
                <section class="about-banner">
-                    <img src="https://placehold.co/1200x520" alt="banner-img">
+                    <img src="https://media.istockphoto.com/id/585178794/ko/%EC%82%AC%EC%A7%84/%ED%8B%B0%EB%9D%BC%EB%AF%B8%EC%8A%88.webp?a=1&b=1&s=612x612&w=0&k=20&c=gKe9bg7c2hV2FktP-2KlvJFukwImxWkni_GgINIqXj0=" alt="banner-img">
                </section>
                <div class="title-box">
                    <h2>방방곡곡을 소개합니다.</h2>
                </div>
                <section class="about">
                     <div class="about-text">
-                        <h3>Nam eget interdum odio.</h3>
-                        <p>Mauris urna tellus, ultricies mollis justo sed, accumsan vehicula purus. Etiam non semper est. Vestibulum quis metus eleifend eros tristique tincidunt. Quisque ultricies feugiat venenatis. Mauris fermentum, arcu eget consequat posuere, mauris mauris finibus dui, a porta augue nisl sed mauris.</p>
+                        <h3>인허가 숙소 조회 서비스</h3>
+                        <p>허가 받은 숙소 정보를 제공하고 ai의 여행 코스 추천을 기반으로 사용자의 신뢰도를 높이고 보다 쾌적한 여행이 될 수 있도록 도와주는 서비스</p>
                     </div>
                     <img src="https://placehold.co/300x220" alt="img">
                </section>

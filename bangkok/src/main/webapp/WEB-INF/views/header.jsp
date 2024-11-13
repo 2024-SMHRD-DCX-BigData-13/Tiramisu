@@ -64,7 +64,7 @@
 					<ul class="hamburger-menu">
 						<li><a href="#">소개</a>
 							<ul class="sub-menu">
-								<li><a href="#">방방곡곡이란?</a></li>
+								<li><a href="goAbout.do">방방곡곡이란?</a></li>
 							</ul></li>
 						<li><a href="#">숙소 찾기</a></li>
 						<li><a href="#">AI 추천</a>
