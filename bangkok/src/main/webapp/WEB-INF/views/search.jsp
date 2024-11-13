@@ -62,7 +62,7 @@
 			</section>
 			<section id="search-result">
 				<div class="result-top-text">
-					<p>검색 결과 n건</p>
+					<p>검색 결과 19건</p>
 					<select name="" id="">
 						<option>3줄 보기</option>
 						<option>4줄 보기</option>

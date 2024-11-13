@@ -11,9 +11,9 @@
 	<body>
 		<footer>
 			<div class="footer-wrap">
-				<div class="f-text-h">dsadasdasda</div>
-				<div class="f-text"></div>
-				<div class="f-connect"></div>
+				<div class="f-text-h">DCX기반 빅데이터 개발자 과정</div>
+				<div class="f-text">약과 띠라미수</div>
+				<div class="f-connect">목포시 인재 개발원</div>
 			</div>
 		</footer>
 		<script src="assets/js/ie/hf.js"></script>
