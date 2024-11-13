@@ -11,8 +11,10 @@ $(document).ready(function() {
 
         if ($('body').hasClass('dark')) {
             localStorage.setItem('theme', 'dark');
+            $("#vButton").text("밝게");
         } else {
             localStorage.setItem('theme', 'light');
+            $("#vButton").text("어둡게");
         }
     });
 });
