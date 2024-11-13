@@ -5,7 +5,8 @@
 	<select id="selectForType" resultType="com.tiramisu.model.Urls">
 
 		SELECT u.img_url
-		FROM urls u
+		FROM urls
+		u
 		JOIN lodgings l ON u.lod_id = l.lod_id
 		WHERE
 		l.lod_type = #{lod_type}
@@ -17,7 +18,8 @@
 
 		SELECT u.img_url
 		FROM urls u
-		JOIN lodgings l ON u.lod_id = l.lod_id
+		JOIN lodgings l ON u.lod_id =
+		l.lod_id
 		WHERE l.lon = #{lon} AND l.lat = #{lat}
 
 	</select>
@@ -26,11 +28,11 @@
 		resultType="com.tiramisu.model.Urls">
 
 		SELECT u.img_url, u.lod_id
-        FROM urls u
-        JOIN lodgings l ON u.lod_id = l.lod_id
-        WHERE l.lod_addr LIKE '%' || #{lod} || '%'
-           OR l.lod_name LIKE '%' || #{lod} || '%'
-           OR l.lod_type LIKE '%' || #{lod} || '%'
+		FROM urls u
+		JOIN lodgings l ON u.lod_id = l.lod_id
+		WHERE l.lod_addr LIKE '%' || #{lod} || '%'
+		OR l.lod_name LIKE '%' || #{lod} || '%'
+		OR l.lod_type LIKE '%' || #{lod} || '%'
 
 	</select>
 
@@ -48,9 +50,19 @@
 
 		SELECT u.img_url
 		FROM urls u
-		JOIN lodgings l ON u.lod_id = l.lod_id
+		JOIN lodgings l ON u.lod_id =
+		l.lod_id
 		WHERE u.lod_id = #{lodId}
 
+	</select>
+
+	<select id="selectForTypeUrl"
+		resultType="com.tiramisu.model.Urls">
+		SELECT u.img_url, u.lod_id
+		FROM urls u
+		JOIN lodgings l ON u.lod_id = l.lod_id
+		WHERE
+		l.lod_type = #{lodType}
 	</select>
 
 </mapper>
