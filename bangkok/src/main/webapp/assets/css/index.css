@@ -425,17 +425,21 @@
 }
 
 .small-img {
+	display: block;
 	margin: 0;
 	margin-right: 16px;
 	width: 36vw;
 	max-width: 170px;
+	height: 36vw;
 	max-height: 170px;
 	position: relative;
 }
 
-.small-img>img {
-	width: 100%;
+.small-img > img {
+	width: 100vw;
 	max-width: 170px;
+	height: 100vw;
+	max-height: 170px;
 	object-fit: cover;
 	object-position: center;
 }
