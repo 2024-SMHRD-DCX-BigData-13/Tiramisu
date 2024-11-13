@@ -193,7 +193,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="map" class="map" style="width:100%; height:400px;"></div>
+			<div id="map" class="map" style="width: 100%; height: 400px;"></div>
 		</section>
 		</div>
 	</main>
@@ -208,14 +208,28 @@
 	<script src="assets/js/ie/d.js"></script>
 	<script src="assets/js/ie/hf.js"></script>
 	<script src="assets/js/ie/detail.js"></script>
-	<script src="assets/js/ie/naverMaps.js"></script>
+	<script src="assets/js/ie/naverMapsDetail.js"></script>
 	<script type="text/javascript">
-		// JSP에서 전달된 위도와 경도 값을 JavaScript 함수에 전달
- 		var latitude = ${lods.get(0).lat};  // 첫 번째 숙소의 위도
-        var longitude = ${lods.get(0).lon}; // 첫 번째 숙소의 경도
+		// 지도 초기화 전에 첫 번째 숙소의 lat, lon 값을 가져와 초기 지도 중심 좌표로 설정
+		<c:forEach var="lodging" items="${lod}">
+		// 첫 번째 숙소의 lat, lon 값으로 지도 초기화
+		var lat = "${lodging.lat}";
+		var lon = "${lodging.lon}";
+		initMap(lat, lon); // 초기 지도 설정
+		</c:forEach>
 
-		// 지도 초기화 전에 위도와 경도 값을 설정
-		setCoordinates(latitude, longitude);
+		// c:forEach 내에서 JSP 변수를 JS로 전달하여 마커 추가
+		<c:forEach var="lodging" items="${lod}">
+		var lat = "${lodging.lat}";
+		var lon = "${lodging.lon}";
+		var title = "${lodging.lod_name}"; // 숙소 이름을 타이틀로 사용
+
+		// setCoordinates 함수 호출하여 마커 추가
+		setCoordinates(lat, lon, title);
+		</c:forEach>
 	</script>
+
+
+
 </body>
 </html>
