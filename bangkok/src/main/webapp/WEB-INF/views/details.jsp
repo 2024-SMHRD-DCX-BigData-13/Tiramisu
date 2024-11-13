@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +16,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
 	rel="stylesheet">
+<script type="text/javascript"
+	src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=rcitx86g0n"></script>
 </head>
 <body>
 	<header>
@@ -106,9 +108,8 @@
 							<h2>${lodging.lod_name }</h2>
 							<p>
 								주소 : ${lodging.lod_addr}<br> 전화번호 : ${lodging.lod_tel }<br>
-								체크인 시간 : ${lodging.checkin }/${lodging.checkout }<br> 
-								테마 : ${lodging.lod_type }<br>
-								평점 : ★${lodging.lod_ratings }
+								체크인 시간 : ${lodging.checkin }/${lodging.checkout }<br> 테마 :
+								${lodging.lod_type }<br> 평점 : ★${lodging.lod_ratings }
 							</p>
 
 							<h3>인허가 정보</h3>
@@ -144,20 +145,19 @@
 				<button onclick="valueUp()">▶</button>
 			</div>
 			<div class="info-box">
+				<input type="hidden" id="dataNum" name="dataNum" value="${data}" />
 				<c:forEach var="url" items="${url}" varStatus="status">
-					<c:if test="${status.index == 3}">
+					<c:if test="${status.index == 1}">
 						<img src="${url.img_url }" alt="img" id="rooms">
-						
 						<div class="info-side">
 					</c:if>
 				</c:forEach>
-				
 				<c:forEach var="room" items="${room}" varStatus="status">
-					<c:if test="${status.index == 3}">
+					<c:if test="${status.index == 1}">
 						<div class="info-text">
 							<!-- <img src="https://placehold.co/34" alt="icon"> -->
 							<p>객실명: ${room.room_name }</p>
-							
+							<p id="output"></p>
 						</div>
 						<div class="info-text">
 							<!-- <img src="https://placehold.co/34" alt="icon"> -->
@@ -187,13 +187,13 @@
 				<div class="service-box">
 					<div class="info-text">
 						<c:forEach var="lod" items="${lod}">
-								<!-- <img src="https://placehold.co/34" alt="icon"> -->
-								<p> ${fn:replace(fn:replace(lod.service, ',', '<br/> '), ' ', '')}</p>
+							<!-- <img src="https://placehold.co/34" alt="icon"> -->
+							<p>${fn:replace(fn:replace(lod.service, ',', '<br/> '), ' ', '')}</p>
 						</c:forEach>
 					</div>
 				</div>
 			</div>
-			<img src="https://placehold.co/440x480" alt="지도">
+			<div id="map" class="map" style="width:100%; height:400px;"></div>
 		</section>
 		</div>
 	</main>
@@ -208,5 +208,14 @@
 	<script src="assets/js/ie/d.js"></script>
 	<script src="assets/js/ie/hf.js"></script>
 	<script src="assets/js/ie/detail.js"></script>
+	<script src="assets/js/ie/naverMaps.js"></script>
+	<script type="text/javascript">
+		// JSP에서 전달된 위도와 경도 값을 JavaScript 함수에 전달
+ 		var latitude = ${lods.get(0).lat};  // 첫 번째 숙소의 위도
+        var longitude = ${lods.get(0).lon}; // 첫 번째 숙소의 경도
+
+		// 지도 초기화 전에 위도와 경도 값을 설정
+		setCoordinates(latitude, longitude);
+	</script>
 </body>
 </html>

@@ -41,4 +41,12 @@ public class LodgingsDAO {
 		session.close();
 		return lods;
 	}
+
+	public List<Lodgings> selectForType(String type) {
+		SqlSession session = factory.openSession(true);
+		List<Lodgings> lods = session.selectList("selectForTypeLod", type);
+		session.close();
+		return lods;
+
+	}
 }

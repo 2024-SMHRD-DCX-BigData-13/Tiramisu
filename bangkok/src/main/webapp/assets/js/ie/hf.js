@@ -1,3 +1,11 @@
+// darkmod
+$(document).ready(function() {
+    $("#vButton").click(function(){
+        $('body').toggleClass('dark light');
+        $(':root').toggleClass('dark light');
+    })
+});
+
 //
 $.fn.toggleIcon = function() {
     this.find(".icon1").css("transform", "translateY(12px) rotate(-45deg)");

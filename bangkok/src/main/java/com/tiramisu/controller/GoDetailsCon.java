@@ -22,13 +22,17 @@ public class GoDetailsCon implements Controller {
 			throws ServletException, IOException {
 		// 검색 결과 페이지(숙소 상세 정보 페이지) 이동 메소드
 		int lodId = Integer.parseInt(request.getParameter("lod_id"));
+
 		LodgingsDAO lod = new LodgingsDAO();
 		UrlsDAO url = new UrlsDAO();
 		LodRoomsDAO room = new LodRoomsDAO();
+		
 		List<Lodgings> lods = lod.selectForDetail(lodId);
 		List<LodRooms> rooms = room.selectForDetail(lodId);
+		
 		List<Urls> allRoomUrls = new ArrayList<>(); // 모든 URL을 담는 리스트
 		Urls roomUrl = null;
+		
 		for (LodRooms lodRoom : rooms) {
 		    int roomId = lodRoom.getRoom_id(); // room_id 추출
 		    roomUrl = url.selectForDetail(roomId); // room_id를 파라미터로 전달하여 Urls 정보 가져오기

@@ -1,18 +1,45 @@
-:root {
+:root,
+:root.light {
     --main-color: #9167bbff;
     --white-color: #ffffff;
     --sub-color: #51366D;
     --search-box: #C3A7E0;
     --light-purple: #DDCAF0;
     --dark-purple: #1F112E;
-    --p-color: #333333;
+    --text-color: #000000;
+    --sub-text: #4F4F4F;
+    --sub-sub-span: #bbbbbb;
+    --search-button: url("../img/search.png");
+    --theme-bg: #f7f0f6;
+    --unused: #aaaaaa;
+    --bar-color: #dddddd;
+    --box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
+:root.dark {
+    --main-color: #9167bbff;
+    --white-color: #121212;
+    --sub-color: #C3A7E0;
+    --search-box: #9167bbff;
+    --light-purple: #51366D;
+    --dark-purple: #DDCAF0;
+    --text-color: #E0E0E0;
+    --sub-text: #B0B0B0;
+    --sub-sub-span: #777777;
+    --search-button: url("../img/search-dark.png");
+    --theme-bg: #51366D;
+    --unused: #51366D;
+    --bar-color: #51366D;
+    --box-shadow: 0 14px 28px rgba(145, 103, 187, 0.25), 0 10px 10px rgba(145, 103, 187, 0.22);
+}
+body {
+    background-color: var(--white-color);
+    color: var(--text-color);
+}
 /* header */
 header {
     width: 100%;
     height: 100px;
-    background-color: inherit;
+    background-color: var(--white-color);
 }
 .header-wrap {
     width: 100vw;
@@ -47,6 +74,7 @@ header {
 .search-box {
     box-sizing: border-box;
     border: 2px solid var(--search-box);
+    background-color: var(--white-color);
     border-right: 0;
     border-radius: 30px 0 0 30px;
     caret-color: var(--light-purple);
@@ -68,16 +96,12 @@ header {
     border-bottom: 2px solid var(--search-box);
     border-radius: 0;
     outline: none;
-    background-image: linear-gradient(
-        rgb(255, 255, 255, 0.4),
-        rgb(255, 255, 255, 0.4)
-        ), url("../img/search.png");
 }
 .search-box:focus::placeholder {
     color: transparent;
 }
 .search-toggle {
-    background-image: url("../img/search.png");
+    background-image: var(--search-button);
     background-repeat: no-repeat;
     background-position: 0 40%;
     background-size: 24px;
@@ -91,8 +115,14 @@ header {
     box-sizing: border-box;
     border-radius: 0 30px 30px 0;
 }
+.search-box:focus + .search-toggle {
+    border: 0px;
+    border-top: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--search-box);
+    border-radius: 0;
+}
 .search-toggle:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 .search-focus {
     display: none;
@@ -106,6 +136,11 @@ header {
     padding: 18px 10vw 30px;
     background-color: var(--white-color);
 }
+@media (min-width: 1000px) {
+    .search-focus {
+        padding: 18px 50px 30px;
+    }
+}
 .left-text {
     float: left;
     text-align: right;
@@ -113,7 +148,7 @@ header {
     max-width: 260px;
     height: 100%;
     padding-right: 18px;
-    border-right: 3px solid lightgray;
+    border-right: 3px solid var(--bar-color);
 }
 .right-wrap {
     float: left;
@@ -137,6 +172,8 @@ header {
     max-width: 200px;
     margin: 0;
     margin-left: 4px;
+    background-color: var(--white-color);
+    border: 1px solid var(--search-box);
 }
 .button-grid {
     height: 100px;
@@ -154,21 +191,44 @@ header {
 .destination-button > li {
     width: 100%;
     margin: 4px;
-    border: 1px solid rgb(221, 202, 240);
+    border: 1px solid var(--light-purple);
 }
 .destination-button > li > button {
     width: 100%;
     height: 100%;
     padding: 0;
-    color: #aaa;
+    color: var(--unused);
 }
 .destination-button > li > button:hover {
-    background-color: #9167bbff;
-    border: 1px solid #9167bbff;
-    color: white;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 0;
+    color: var(--white-color);
     cursor: pointer;
 }
-
+/*  */
+#vButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    margin-right: 12px;
+    width: 10vw;
+    max-width: 70px;
+    height: auto;
+    box-sizing: border-box;
+    padding: 4px 0;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 15px;
+}
+#vButton:hover {
+    cursor: pointer;
+    background-color: var(--dark-purple);
+    color: var(--main-color);
+}
+/*  */
 /* map */
 .hamburger-wrap {
     box-sizing: border-box;
@@ -178,7 +238,7 @@ header {
 .hamburger {
     display: flex;
     align-items: center;
-    width: 20vw;
+    width: 10vw;
     max-width: 180px;
     height: 100%;
     margin: 0;
@@ -190,7 +250,7 @@ header {
     box-sizing: border-box;
     font-size: clamp(16px, 2vw, 20px);
     margin-right: 10px;
-    color: #9167bbff;
+    color: var(--main-color);
     display: inline-block;
 }
 .hamburger-icon {
@@ -206,7 +266,7 @@ header {
     height: 3px;
     border-radius: 3px;
     position: absolute;
-    background-color: #9167bbff;
+    background-color: var(--main-color);
 }
 .icon2 {
     top: 11px;
@@ -223,7 +283,7 @@ nav {
     top: 100px;
     width: 100vw;
     max-width: 1200px;
-    background-color: #ffffff;
+    background-color: var(--white-color);
 }
 nav a {
     display: block;
@@ -234,11 +294,11 @@ nav a {
     padding-top: 24px;
     padding-left: 24px;
     width: 100%;
-    background-color: inherit;
+    background-color: var(--white-color);
 }
 .hamburger-menu > li {
     vertical-align: top;
-    color: #9167bbff;
+    color: var(--main-color);
     width: 200px;
     margin: 0 14px;
     text-align: left;
@@ -247,8 +307,8 @@ nav a {
     font-weight: bold;
 }
 .hamburger-menu > li > a:hover {
-    color: #fff;
-    background-color: #9167bbff;
+    color: var(--white-color);
+    background-color: var(--main-color);
 }
 .sub-menu {
     width: 100%;
@@ -259,11 +319,11 @@ nav a {
 }
 .sub-menu a {
     font-size: 20px;
-    color: rgb(81, 54, 109);
+    color: var(--sub-color);
 }
 .sub-menu a:hover {
-    background-color: rgb(81, 54, 109);
-    color: #fff;
+    background-color: var(--sub-color);
+    color: var(--white-color);
 }
 /*  */
 
@@ -275,14 +335,14 @@ footer {
 .footer-wrap {
     display: flex;
     flex-wrap: wrap;
-    border-top: 2px solid rgb(221, 202, 240);
+    border-top: 2px solid var(--light-purple);
     width: 100vw;
     max-width: 1200px;
     height: 100%;
     margin-top: 100px;
     align-items: center;
     justify-content: center;
-    color: #9167bbff;
+    color: var(--main-color);
 }
 .f-text-h,
 .f-text,

@@ -1,61 +1,47 @@
-let count = 1;
+let num = 1;  // 초기 값 설정
 
+// 페이지 로드 시, 초기 값으로 서버에 요청
+$(document).ready(function() {
+    updateData(num);
+});
+
+// 값 증가 함수
 function valueUp() {
-	if (count < 10) {
-		count += 1;
-	}
-	$.ajax({
-		url: "detailsBtn.do", // 컨트롤러 URL
-		type: "get",
-		data: {
-			'count': count
-		},
-		success: function(response) {
-			let data = response.updatedCount; // 예시로 updatedCount를 사용
-			updatePageData(data);
-		},
-		error: function(error) {
-			console.log("Error:", error);
-		}
-	});
-
+    if (num < 5) {  // 최대값 설정
+        num += 1;
+    }
+    updateData(num);
 }
 
+// 값 감소 함수
 function valueDown() {
-	if (count > 1) {
-		count -= 1;
-	}
-	$.ajax({
-		url: "detailsBtn.do", // 컨트롤러 URL
-		type: "get",
-		data: {
-			'count': count
-		},
-		success: function(response) {
-			let data = response.updatedCount; // 예시로 updatedCount를 사용
-			updatePageData(data);
-		},
-		error: function(error) {
-			console.log("Error:", error);
-		}
-	});
+    if (num > 1) {  // 최소값 설정
+        num -= 1;
+    }
+    updateData(num);
 }
-function updatePageData(data) {
-    // JavaScript에서 데이터를 사용하여 HTML 요소를 업데이트
-    // 예: `data`를 사용하여 특정 항목을 업데이트
-    $('.info-box').each(function(index) {
-        if (index == data) {
-            $(this).show(); // 해당하는 인덱스의 요소를 보여줌
-        } else {
-            $(this).hide(); // 다른 인덱스의 요소는 숨김
-        }
-    });
 
-    $('.info-text').each(function(index) {
-        if (index == data) {
-            $(this).show(); // 해당하는 인덱스의 정보를 표시
-        } else {
-            $(this).hide(); // 다른 인덱스의 정보를 숨김
+// 서버에 num 값을 보내고, JSP에서 사용할 data를 업데이트
+function updateData(num) {
+    $.ajax({
+        url: "detailsAjax.do", // 서버로 요청
+        type: "get",
+        data: { 'num': num },
+        success: function(res) {
+            // 서버에서 받은 값을 JSP의 hidden input이나 DOM에 바로 반영
+            $("#data").val(res);  // 서버에서 받은 값을 hidden input의 value로 설정
+            console.log("서버에서 받은 값:", res);
+
+            // 페이지 내 특정 부분을 업데이트 (예: 이미지, 객실 정보 등)
+            updatePageContent(res);
+        },
+        error: function(xhr, status, error) {
+            console.error("AJAX 오류:", status, error);
         }
     });
+}
+
+function updatePageContent(data) {
+    // 받은 데이터를 hidden input에 반영하여 JSP에서 조건문에 사용
+    $('#dataNum').val(data);
 }
