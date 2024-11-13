@@ -44,12 +44,12 @@
 					</div>
 					<div class="slide-img">
 						<img
-							src="https://image.goodchoice.kr/resize_792x480/affiliate/2024/03/11/65eec572af91e.jpg"
+							src="https://plus.unsplash.com/premium_photo-1680098057172-c1a73ab2c131?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							alt="">
 					</div>
 					<div class="slide-img">
 						<img
-							src="https://image.goodchoice.kr/resize_792x480/affiliate/2024/03/11/65eec572af91e.jpg"
+							src="https://media.istockphoto.com/id/183848388/ko/%EC%82%AC%EC%A7%84/%EC%97%B4%EB%8C%80-%EB%A6%AC%EC%A1%B0%ED%8A%B8.webp?a=1&b=1&s=612x612&w=0&k=20&c=5OsLHpGBtMyVm4Ey0myg4lWsPLiR7nWmjSSWiuu7rBM="
 							alt="">
 					</div>
 				</div>
