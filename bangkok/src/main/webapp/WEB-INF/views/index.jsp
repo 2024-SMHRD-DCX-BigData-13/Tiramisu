@@ -26,12 +26,10 @@
 					alt="logo">
 				</a>
 			</h1>
-			<form action="goSearch.do">
-				<div class="search">
-					<input class="search-box" type="text" size="10" name="search"
-						placeholder="전국 방방곡곡 어디든지!">
-					<button class="search-toggle" type="submit"></button>
-				</div>
+			<form class="search" action="goSearch.do">
+				<input class="search-box" type="text" size="10" name="search"
+					placeholder="전국 방방곡곡 어디든지!">
+				<button class="search-toggle" type="submit"></button>
 			</form>
 			<div class="search-focus">
 				<div class="left-text">
@@ -158,8 +156,14 @@
 
 								<div class="top-div-text">
 									<!-- RatingLod에서 해당 인덱스에 맞는 항목 출력 -->
-									<p>숙소 이름: ${RatingLod[index].lod_name}</p>
-									<p>숙소 설명: ${RatingLod[index].lod_desc}</p>
+									<div>
+										<span>숙소</span>
+										<p>${RatingLod[index].lod_name}</p>
+									</div>
+									<div>
+										<span>숙소 설명</span>
+										<p>${RatingLod[index].lod_desc}</p>
+									</div>
 								</div>
 
 								<!-- 전송 버튼 -->
@@ -289,7 +293,7 @@
 						<img
 							src="https://life-style-f-hotel.seoulhotelskorea.com/data/Photos/700x500w/677/67716/67716833.JPEG"
 							alt="큰썸네일">
-						<!-- <div class="region-overlay">설명 텍스트</div> -->
+						<div class="region-overlay">설명 텍스트</div>
 					</div>
 					<ul class="small-imgs">
 						<li class="small-img"><img src="https://placehold.co/170"
@@ -303,7 +307,7 @@
 							<div class="region-overlay">설명 텍스트</div></li>
 					</ul>
 				</div>
-				<div class="map" id="map" style="width: 100%; height: 400px;">
+				<div class="map" id="map" style="width: 100%; height: 590px;">
 					<!-- 지도 api 삽입 -->
 					<!-- <img src="https://placehold.co/590" alt="지도"> -->
 				</div>
