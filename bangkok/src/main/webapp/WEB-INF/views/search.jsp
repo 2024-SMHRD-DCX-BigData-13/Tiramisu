@@ -58,14 +58,7 @@
 							</form>
 						</li>
 					</c:forEach>
-
-					<!-- <li><a href="#"> <img src="https://placehold.co/260x280"
-							alt="small-img">
-							<div class="text-box">
-								<h3>제목</h3>
-								<p>설명</p>
-							</div>
-					</a></li>
+<!-- 
 					<li><a href="#"> <img src="https://placehold.co/260x280"
 							alt="small-img">
 							<div class="text-box">
@@ -130,6 +123,27 @@
 							</div>
 					</a></li>
 					<li><a href="#"> <img src="https://placehold.co/260x280"
+							alt="small-img">
+							<div class="text-box">
+								<h3>제목</h3>
+								<p>설명</p>
+							</div>
+					</a></li>
+					<li><a href="#"> <img src="https://placehold.co/260x280"
+							alt="small-img">
+							<div class="text-box">
+								<h3>제목</h3>
+								<p>설명</p>
+							</div>
+					</a></li>
+										<li><a href="#"> <img src="https://placehold.co/260x280"
+							alt="small-img">
+							<div class="text-box">
+								<h3>제목</h3>
+								<p>설명</p>
+							</div>
+					</a></li>
+										<li><a href="#"> <img src="https://placehold.co/260x280"
 							alt="small-img">
 							<div class="text-box">
 								<h3>제목</h3>
@@ -140,10 +154,7 @@
 				<div class="paging-button">
 					<img src="assets/img/arrow-left.png" alt="left-arrow"
 						class="left-arrow">
-					<div class="number-button">
-						<a href="#"><p>1</p></a> <a href="#"><p>2</p></a> <a href="#"><p>3</p></a>
-						<a href="#"><p>4</p></a> <a href="#"><p>5</p></a> <a href="#"><p>6</p></a>
-					</div>
+					<div class="number-button" id="pagination"></div>
 					<img src="assets/img/arrow-right.png" alt="right-arrow"
 						class="right-arrow">
 				</div>
