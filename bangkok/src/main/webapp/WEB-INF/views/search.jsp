@@ -21,44 +21,7 @@
 	<main>
 		<div class="wrap">
 			<section id="banner">
-				<ul>
-					<li class="img-slider"><img src="https://placehold.co/420x260"
-						alt="img">
-						<div class="banner-text">
-							<h2>제목</h2>
-							<p>설명</p>
-						</div></li>
-					<li class="img-slider"><img src="https://placehold.co/420x260"
-						alt="img">
-						<div class="banner-text">
-							<h2>제목</h2>
-							<p>설명</p>
-						</div></li>
-					<li class="img-slider"><img src="https://placehold.co/420x260"
-						alt="img">
-						<div class="banner-text">
-							<h2>제목</h2>
-							<p>설명</p>
-						</div></li>
-					<li class="img-slider"><img src="https://placehold.co/420x260"
-						alt="img">
-						<div class="banner-text">
-							<h2>제목</h2>
-							<p>설명</p>
-						</div></li>
-					<li class="img-slider"><img src="https://placehold.co/420x260"
-						alt="img">
-						<div class="banner-text">
-							<h2>제목</h2>
-							<p>설명</p>
-						</div></li>
-					<li class="img-slider"><img src="https://placehold.co/420x260"
-						alt="img">
-						<div class="banner-text">
-							<h2>제목</h2>
-							<p>설명</p>
-						</div></li>
-				</ul>
+				<div><img src="https://images.trvl-media.com/lodging/70000000/69320000/69311400/69311369/77a4b41d.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="banner"></div>
 			</section>
 			<section id="search-result">
 				<div class="result-top-text">
