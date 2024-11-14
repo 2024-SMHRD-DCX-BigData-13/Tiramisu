@@ -11,9 +11,26 @@
 	<body>
 		<footer>
 			<div class="footer-wrap">
-				<div class="f-text-h">DCX기반 빅데이터 개발자 과정</div>
-				<div class="f-text">약과 띠라미수</div>
-				<div class="f-connect">목포시 인재 개발원</div>
+				<div class="f-text-h">
+					<p>
+						DCX기반 빅데이터<br>
+						분석서비스 개발자과정<br>
+					</p>
+					<br>
+					Team.약과 띠라미수
+				</div>
+				<div class="f-text">
+					<span>© 2024 [TEAM]. All rights reserved.</span>
+				</div>
+				<div class="f-connect">
+					<p>Technologies Used</p>
+					<hr>
+					<div>
+						<img src="https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000">
+						<img src="https://img.icons8.com/?size=100&id=4Z2nCrz5iPY2&format=png&color=000000">
+						<img src="https://img.icons8.com/?size=100&id=XH6rVkDQCZ9U&format=png&color=000000">
+					</div>
+				</div>
 			</div>
 		</footer>
 		<script src="assets/js/ie/hf.js"></script>
