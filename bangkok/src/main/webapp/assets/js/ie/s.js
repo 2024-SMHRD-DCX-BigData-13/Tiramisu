@@ -30,6 +30,8 @@ $(document).ready(() => {
             $(this).find(".banner-text").fadeOut();
         }
     });
+    var itemCount = $(".result-list li").length;
+    $(".result-top-text > p").text("검색 결과 " + itemCount + "건");
 });
 
 
