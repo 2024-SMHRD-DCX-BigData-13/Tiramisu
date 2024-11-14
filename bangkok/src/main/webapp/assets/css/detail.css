@@ -122,7 +122,15 @@
 
 /* middle */
 #detail-middle {
+	max-width: 1200px;
+	overflow: hidden;
     height: 480px;
+}
+#detail-middle ul {
+	display: flex;
+	width: 1200px;
+	height: 360px;
+    transition: left 0.3s ease;
 }
 .info-header {
     display: flex;
@@ -160,6 +168,7 @@
     box-sizing: border-box;
     padding: 0 42px;
     margin: 0;
+	background-color: var(--white-color);
 }
 .info-box > img {
     width: 100vw;

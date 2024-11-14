@@ -68,43 +68,75 @@
 		<section id="detail-middle">
 			<div class="info-header">
 				<h2>객실 정보</h2>
-				<button onclick="valueDown()">◀</button>
-				<button onclick="valueUp()">▶</button>
+				<button class="arrow-left">◀</button>
+				<button class="arrow-right">▶</button>
+<!-- 				<button onclick="valueDown()">◀</button>
+				<button onclick="valueUp()">▶</button> -->
 			</div>
-			<div class="info-box">
-				<input type="hidden" id="dataNum" name="dataNum" value="${data}" />
-				<c:forEach var="url" items="${url}" varStatus="status">
-					<c:if test="${status.index == 1}">
-						<img src="${url.img_url }" alt="img" id="rooms">
-						<div class="info-side">
-					</c:if>
-				</c:forEach>
-				<c:forEach var="room" items="${room}" varStatus="status">
-					<c:if test="${status.index == 1}">
-						<div class="info-text">
-							<!-- <img src="https://placehold.co/34" alt="icon"> -->
-							<p>객실명: ${room.room_name }</p>
-							<p id="output"></p>
-						</div>
-						<div class="info-text">
-							<!-- <img src="https://placehold.co/34" alt="icon"> -->
-							<p>최저가(1박 기준): ${room.min_price }원</p>
-						</div>
-						<div class="info-text">
-							<!-- <img src="https://placehold.co/34" alt="icon"> -->
-							<p>최고가(1박 기준): ${room.max_price }원</p>
-						</div>
-						<div class="info-text">
-							<!-- <img src="https://placehold.co/34" alt="icon"> -->
-							<p>수용인원: ${room.people }인</p>
-						</div>
-						<div class="info-text">
-							<!-- <img src="https://placehold.co/34" alt="icon"> -->
-							<p>최대 수용인원: ${room.max_people }인</p>
-						</div>
-					</c:if>
-				</c:forEach>
-			</div>
+			<ul>
+			    <c:forEach var="url" items="${url}">
+			        <li class="info-box">
+			            <input type="hidden" id="dataNum" name="dataNum" value="${data}" />
+			            <img src="${url.img_url}" alt="img" id="rooms">
+			            <div class="info-side">
+			                <!-- 각 room 정보를 반복 -->
+			                <c:forEach var="room" items="${room}">
+			                    <div class="info-text">
+			                        <p>객실명: ${room.room_name}</p>
+			                    </div>
+			                    <div class="info-text">
+			                        <p>최저가(1박 기준): ${room.min_price}원</p>
+			                    </div>
+			                    <div class="info-text">
+			                        <p>최고가(1박 기준): ${room.max_price}원</p>
+			                    </div>
+			                    <div class="info-text">
+			                        <p>수용인원: ${room.people}인</p>
+			                    </div>
+			                    <div class="info-text">
+			                        <p>최대 수용인원: ${room.max_people}인</p>
+			                    </div>
+			                </c:forEach>
+			            </div>
+			        </li>
+			    </c:forEach>
+			</ul>
+			<%-- <ul>
+				<li class="info-box">
+					<input type="hidden" id="dataNum" name="dataNum" value="${data}" />
+					<c:forEach var="url" items="${url}" varStatus="status">
+						<c:if test="${status.index == 1}">
+							<img src="${url.img_url }" alt="img" id="rooms">
+							<div class="info-side">
+						</c:if>
+					</c:forEach>
+					<c:forEach var="room" items="${room}" varStatus="status">
+						<c:if test="${status.index == 1}">
+							<div class="info-text">
+								<!-- <img src="https://placehold.co/34" alt="icon"> -->
+								<p>객실명: ${room.room_name }</p>
+								<p id="output"></p>
+							</div>
+							<div class="info-text">
+								<!-- <img src="https://placehold.co/34" alt="icon"> -->
+								<p>최저가(1박 기준): ${room.min_price }원</p>
+							</div>
+							<div class="info-text">
+								<!-- <img src="https://placehold.co/34" alt="icon"> -->
+								<p>최고가(1박 기준): ${room.max_price }원</p>
+							</div>
+							<div class="info-text">
+								<!-- <img src="https://placehold.co/34" alt="icon"> -->
+								<p>수용인원: ${room.people }인</p>
+							</div>
+							<div class="info-text">
+								<!-- <img src="https://placehold.co/34" alt="icon"> -->
+								<p>최대 수용인원: ${room.max_people }인</p>
+							</div>
+						</c:if>
+					</c:forEach>
+				</li>
+			</ul> --%>
 		</section>
 		<section id="detail-bottom">
 			<div class="detail-left">
