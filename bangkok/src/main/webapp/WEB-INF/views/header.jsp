@@ -24,7 +24,7 @@
 				<div class="right-wrap">
 					<div class="right-box">
 						<p>여행지</p>
-						<form class="search" action="goSearch.do">
+						<form action="goSearch.do">
 							<ul class="destination-button button-grid">
 								<li><button type="submit" name="search" value="강원">강원</button></li>
 								<li><button type="submit" name="search" value="경기">경기</button></li>
@@ -65,21 +65,18 @@
 			</div>
 			<nav>
 				<ul class="hamburger-menu">
-					<li><a href="#">소개</a>
+					<li><a href="goAbout.do">소개</a>
 						<ul class="sub-menu">
 							<li><a href="goAbout.do">방방곡곡이란?</a></li>
-						</ul></li>
-					<li><a href="#">숙소 찾기</a></li>
-					<li><a href="#">AI 추천</a>
+						</ul>
+					</li>
+					<li><a href="goSearch.do?search=서울">숙소 찾기</a></li>
+					<li><a href="goAiRec.do">AI 추천</a>
 						<ul class="sub-menu">
-							<li><a href="#">나를 위한 숙소 찾기</a></li>
+							<li><a href="goAiRec.do">나를 위한 숙소 찾기</a></li>
 							<li><a href="goAiRec.do">AI추천 여행지</a></li>
-						</ul></li>
-					<li><a href="#">여행지</a>
-						<ul class="sub-menu">
-							<li><a href="#">관광명소</a></li>
-							<li><a href="#">맛집</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 			</nav>
 		</div>

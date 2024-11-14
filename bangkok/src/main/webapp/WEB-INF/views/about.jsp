@@ -19,7 +19,7 @@
         <main>
             <div class="wrap">
                <section class="about-banner">
-                    <img src="https://media.istockphoto.com/id/585178794/ko/%EC%82%AC%EC%A7%84/%ED%8B%B0%EB%9D%BC%EB%AF%B8%EC%8A%88.webp?a=1&b=1&s=612x612&w=0&k=20&c=gKe9bg7c2hV2FktP-2KlvJFukwImxWkni_GgINIqXj0=" alt="banner-img">
+                    <img src="https://www.customs.go.kr/images/web/mokpo/main/M_visual.png" alt="banner-img">
                </section>
                <div class="title-box">
                    <h2>방방곡곡을 소개합니다.</h2>
