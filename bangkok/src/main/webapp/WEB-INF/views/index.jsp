@@ -178,8 +178,7 @@
 					</ul>
 				</div>
 				<div class="map" id="map" style="width: 100%; height: 590px;">
-					<!-- 지도 api 삽입 -->
-					<!-- <img src="https://placehold.co/590" alt="지도"> -->
+
 				</div>
 			</section>
 		</div>
