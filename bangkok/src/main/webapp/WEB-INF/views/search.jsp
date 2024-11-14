@@ -58,7 +58,7 @@
 							</form>
 						</li>
 					</c:forEach>
-<!-- 
+
 					<li><a href="#"> <img src="https://placehold.co/260x280"
 							alt="small-img">
 							<div class="text-box">
@@ -149,7 +149,7 @@
 								<h3>제목</h3>
 								<p>설명</p>
 							</div>
-					</a></li> -->
+					</a></li>
 				</ul>
 				<div class="paging-button">
 					<img src="assets/img/arrow-left.png" alt="left-arrow"
