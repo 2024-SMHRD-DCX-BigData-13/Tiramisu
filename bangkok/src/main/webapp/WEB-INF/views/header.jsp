@@ -29,7 +29,7 @@
 								<li><button type="submit" name="search" value="강원">강원</button></li>
 								<li><button type="submit" name="search" value="경기">경기</button></li>
 								<li><button type="submit" name="search" value="경북">경북</button></li>
-								<li><button type="submit" name="search" value="경상">경상</button></li>
+								<li><button type="submit" name="search" value="경남">경남</button></li>
 								<li><button type="submit" name="search" value="광주">광주</button></li>
 								<li><button type="submit" name="search" value="대구">대구</button></li>
 								<li><button type="submit" name="search" value="대전">대전</button></li>
